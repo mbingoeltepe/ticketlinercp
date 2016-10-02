@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+	<auffuehrung
+	id="1"
+	datumuhrzeit="2011-01-31 20:00:00"
+	preis="2"
+	storniert="false"
+	version="1"
+	/>
+
+	<person 
+	id="1"
+	nachname="Sadransky" 
+	vorname="Bernhard"
+	username="sad"
+	passwort="sad"
+	geschlecht="0"
+	typ="K"
+	gruppe="0"
+	strasse="strasse"
+	plz="2042"
+	ort="gd-city"
+	gesperrt="false"
+	ermaechtigung="false"
+	version="1"
+	/>
+
+	<transaktion
+	id="1"
+	datumuhrzeit="2010-12-16 19:00:00"
+	status="0"
+	zahlungsart="0"
+	kunde_id="1"
+	reservierungsnr="1"
+	version="1"
+	/>
+
+	<transaktion
+	id="2"
+	datumuhrzeit="2010-12-17 09:00:00"
+	status="1"
+	zahlungsart="2"
+	version="1"
+	/>
+
+	<platz
+	id="1"
+	nummer="1"
+	status="1"
+	auffuehrung_id="1"
+	transaktion_id="1"
+	version="1"
+	/>
+
+	<platz
+	id="2"
+	nummer="2"
+	status="1"
+	auffuehrung_id="1"
+	transaktion_id="1"
+	version="1"
+	/>
+
+	<platz
+	id="3"
+	nummer="3"
+	status="1"
+	auffuehrung_id="1"
+	transaktion_id="1"
+	version="1"
+	/>
+
+	<platz
+	id="4"
+	nummer="4"
+	status="2"
+	auffuehrung_id="1"
+	transaktion_id="2"
+	version="1"
+	/>
+
+	<platz
+	id="5"
+	nummer="5"
+	status="2"
+	auffuehrung_id="1"
+	transaktion_id="2"
+	version="1"
+	/>
+
+</dataset>

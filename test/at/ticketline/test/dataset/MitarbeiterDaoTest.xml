@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+	<person
+	typ="M"
+	id="1"
+	vorname="Anita"
+	nachname="Rummel"
+	land="Österreich"
+	ort="Wien"
+	plz="1010"
+	strasse="Stephansplatz 1"
+	username="anitarummel123" 
+	passwort="pwd"
+	berechtigung="0"
+	geschlecht="1"
+	/>
+</dataset>

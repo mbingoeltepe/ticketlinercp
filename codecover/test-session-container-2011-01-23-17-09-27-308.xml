@@ -1,0 +1,875 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestSessionContainer xmlns="http://www.codecover.org/xml/testsession-container" Date="1295798967016" TestSessionContainerId="d12527aa-6717-4533-bb5d-5a28be493d52" version="1.0">
+<SrcFileList>
+<SrcFile Content="package at.ticketline.test.integration;&#13;&#10;&#13;&#10;import static org.hamcrest.Matchers.is;&#13;&#10;import static org.junit.Assert.assertThat;&#13;&#10;&#13;&#10;import java.util.Calendar;&#13;&#10;import java.util.GregorianCalendar;&#13;&#10;import java.util.List;&#13;&#10;&#13;&#10;import org.dbunit.dataset.IDataSet;&#13;&#10;import org.dbunit.operation.DatabaseOperation;&#13;&#10;import org.junit.After;&#13;&#10;import org.junit.Before;&#13;&#10;import org.junit.BeforeClass;&#13;&#10;import org.junit.Test;&#13;&#10;&#13;&#10;import at.ticketline.dao.DaoFactory;&#13;&#10;import at.ticketline.dao.interfaces.PlatzDao;&#13;&#10;import at.ticketline.entity.Platz;&#13;&#10;import at.ticketline.entity.TopTen;&#13;&#10;import at.ticketline.service.TopTenServiceImpl;&#13;&#10;import at.ticketline.test.AbstractTestCaseBase;&#13;&#10;&#13;&#10;public class TopTenServiceImplIntTest extends AbstractTestCaseBase {&#13;&#10;&#13;&#10;    private static PlatzDao platzDao = null;&#13;&#10;    private static TopTenServiceImpl tts;&#13;&#10;    &#13;&#10;    @Override&#13;&#10;    public IDataSet getDataSet() {&#13;&#10;&#9;return getDataSet(&quot;TopTenServiceImplIntTest.xml&quot;);&#13;&#10;    }&#13;&#10;    &#13;&#10;    @Override&#13;&#10;    public DatabaseOperation getSetUpOperation() {&#13;&#10;&#9;return DatabaseOperation.CLEAN_INSERT;&#13;&#10;    }&#13;&#10;    &#13;&#10;    @Override&#13;&#10;    public DatabaseOperation getTearDownOperation() {&#13;&#10;&#9;return DatabaseOperation.NONE;&#13;&#10;    }&#13;&#10;    &#13;&#10;    @BeforeClass&#13;&#10;    public static void setUp() {&#9;&#13;&#10;&#9;tts = new TopTenServiceImpl();&#13;&#10;&#9;platzDao = (PlatzDao) DaoFactory.findDaoByEntity(Platz.class);&#13;&#10;    }&#13;&#10;    &#13;&#10;    @Before&#13;&#10;    public void before() throws Exception {&#13;&#10;&#9;this.onSetup();&#13;&#10;    }&#13;&#10;    &#13;&#10;    @After&#13;&#10;    public void after() throws Exception {&#13;&#10;&#9;this.onTearDown();&#13;&#10;    }&#13;&#10;    &#13;&#10;    @Test&#13;&#10;    public void findVerkaufteTickets_ohneKategorie() {&#13;&#10;&#9;Calendar date = GregorianCalendar.getInstance();&#13;&#10;&#9;date.set(2010,9,10);&#13;&#10;&#9;List&lt;TopTen&gt; platze = tts.getTopTenVeranstlatungen(date);&#13;&#10;&#9;assertThat(platze.size(), is(2));&#13;&#10;&#9;&#9;&#13;&#10;    }&#13;&#10;    &#13;&#10;    @Test&#13;&#10;    public void findTopTen_mitKategorie() {&#13;&#10;&#9;Calendar date = GregorianCalendar.getInstance();&#13;&#10;&#9;date.set(2010,9,10);&#13;&#10;&#9;List&lt;TopTen&gt; platze = platzDao.findTopTen(date, &quot;kat&quot;);&#13;&#10;&#9;assertThat(platze.size(), is(1));&#13;&#10;&#9;&#13;&#10;    }&#13;&#10;    &#13;&#10;    @Test&#13;&#10;    public void findTopTen_mitFalscherKategorie() {&#13;&#10;&#9;Calendar date = GregorianCalendar.getInstance();&#13;&#10;&#9;date.set(2010,10,10);&#13;&#10;&#9;List&lt;TopTen&gt; platze = tts.getTopTenVeranstaltungenNachKategorie(date, &quot;bla bla bla&quot;);&#13;&#10;&#9;assertThat(platze.size(), is(0));&#13;&#10;&#9;&#13;&#10;    }&#13;&#10;    &#13;&#10;&#13;&#10;  &#13;&#10;}&#13;&#10;" Filename="TopTenServiceImplIntTest.java" Intrnl_Id="1"/>
+<SrcFile Content="package at.ticketline.test.integration;&#13;&#10;&#13;&#10;import static org.hamcrest.Matchers.greaterThan;&#13;&#10;import static org.hamcrest.Matchers.is;&#13;&#10;import static org.junit.Assert.assertEquals;&#13;&#10;import static org.junit.Assert.assertThat;&#13;&#10;&#13;&#10;import java.math.BigDecimal;&#13;&#10;import java.util.Calendar;&#13;&#10;import java.util.GregorianCalendar;&#13;&#10;import java.util.List;&#13;&#10;&#13;&#10;import org.dbunit.dataset.IDataSet;&#13;&#10;import org.dbunit.operation.DatabaseOperation;&#13;&#10;import org.junit.After;&#13;&#10;import org.junit.Before;&#13;&#10;import org.junit.BeforeClass;&#13;&#10;import org.junit.Test;&#13;&#10;&#13;&#10;import at.ticketline.dao.DaoFactory;&#13;&#10;import at.ticketline.dao.interfaces.ArtikelDao;&#13;&#10;import at.ticketline.dao.interfaces.BestellPositionDao;&#13;&#10;import at.ticketline.dao.interfaces.BestellungDao;&#13;&#10;import at.ticketline.entity.Artikel;&#13;&#10;import at.ticketline.entity.ArtikelKategorie;&#13;&#10;import at.ticketline.entity.BestellPosition;&#13;&#10;import at.ticketline.entity.Bestellung;&#13;&#10;import at.ticketline.entity.Zahlungsart;&#13;&#10;import at.ticketline.service.BestellungServiceImpl;&#13;&#10;import at.ticketline.test.AbstractTestCaseBase;&#13;&#10;&#13;&#10;public class BestellungServiceImplIntTest extends AbstractTestCaseBase {&#13;&#10;&#13;&#10;    private static BestellungDao bestellungDao = null;&#13;&#10;    private static BestellPositionDao bestellpositionDao = null;    &#13;&#10;    private static ArtikelDao artikelDao = null;    &#13;&#10;    private static BestellungServiceImpl bs;&#13;&#10;&#13;&#10;    @Override&#13;&#10;    public IDataSet getDataSet() {&#13;&#10;&#9;return getDataSet(&quot;BestellungServiceImplIntTest.xml&quot;);&#13;&#10;    }&#13;&#10;&#13;&#10;    @Override&#13;&#10;    public DatabaseOperation getSetUpOperation() {&#13;&#10;&#9;return DatabaseOperation.CLEAN_INSERT;&#13;&#10;    }&#13;&#10;&#13;&#10;    @Override&#13;&#10;    public DatabaseOperation getTearDownOperation() {&#13;&#10;&#9;return DatabaseOperation.NONE;&#13;&#10;    }&#13;&#10;&#13;&#10;    @BeforeClass&#13;&#10;    public static void setUp() {&#9;&#13;&#10;&#9;bs = new BestellungServiceImpl();&#13;&#10;&#9;bestellungDao = (BestellungDao) DaoFactory.findDaoByEntity(Bestellung.class);&#13;&#10;&#9;bestellpositionDao = (BestellPositionDao) DaoFactory.findDaoByEntity(BestellPosition.class);&#13;&#10;&#9;artikelDao = (ArtikelDao) DaoFactory.findDaoByEntity(Artikel.class);&#13;&#10;    }&#13;&#10;&#13;&#10;    @Before&#13;&#10;    public void before() throws Exception {&#13;&#10;&#9;this.onSetup();&#13;&#10;    }&#13;&#10;&#13;&#10;    @After&#13;&#10;    public void after() throws Exception {&#13;&#10;&#9;this.onTearDown();&#13;&#10;    }&#13;&#10;&#13;&#10;&#13;&#10;    @Test&#13;&#10;    public void findByBestellung() {&#13;&#10;&#9;Bestellung b = new Bestellung();&#13;&#10;&#9;b.setBezahlt(true);&#13;&#10;&#9;b.setVersandt(true);&#13;&#10;&#9;List&lt;Bestellung&gt; list = bs.findByBestellung(b);&#13;&#10;&#13;&#10;&#9;assertThat(list.size(), is(2));&#13;&#10;&#9;assertEquals(list.get(0).isVersandt(), true);&#13;&#10;&#9;assertEquals(list.get(1).getBestellzeitpunkt().toString(), &quot;Wed Oct 20 19:00:00 CEST 2010&quot;);&#13;&#10;&#13;&#10;    }&#13;&#10;&#13;&#10;    @Test&#13;&#10;    public void findAllBestellungen() {&#13;&#10;&#13;&#10;&#9;List&lt;Bestellung&gt; list = bestellungDao.findAll();&#13;&#10;&#13;&#10;&#9;assertThat(list.size(), is(3));&#13;&#10;&#9;assertEquals(list.get(0).isVersandt(), true);&#13;&#10;&#9;assertEquals(list.get(1).isBezahlt(), false);&#13;&#10;&#9;assertEquals(list.get(2).getBestellzeitpunkt().toString(), &quot;Wed Oct 20 19:00:00 CEST 2010&quot;);&#13;&#10;&#13;&#10;    }&#13;&#10;    &#13;&#10;    @Test&#13;&#10;    public void addBestellung() {&#13;&#10;&#13;&#10;&#9;Integer[] datumZeit = {2011, 1, 10, 0, 0};&#13;&#10;&#9;&#13;&#10;&#9;Calendar c = new GregorianCalendar();&#13;&#10;&#9;c.set(Calendar.YEAR, datumZeit[0]);&#13;&#10;&#9;c.set(Calendar.MONTH, datumZeit[1]);&#13;&#10;&#9;c.set(Calendar.DAY_OF_MONTH, datumZeit[2]);&#13;&#10;&#9;c.set(Calendar.HOUR_OF_DAY, datumZeit[3]);&#13;&#10;&#9;c.set(Calendar.MINUTE, datumZeit[4]);&#13;&#10;&#13;&#10;&#9;Bestellung b = new Bestellung();&#13;&#10;&#9;b.setBezahlt(true);&#13;&#10;&#9;b.setVersandt(false);&#13;&#10;&#9;b.setBestellzeitpunkt(c.getTime());&#13;&#10;&#9;b.setZahlungsart(Zahlungsart.VORKASSE);&#13;&#10;&#13;&#10;&#9;&#13;&#10;&#9;int i = bestellungDao.findAll().size();&#13;&#10;&#9;&#13;&#10;&#9;bs.addBestellung(b);&#13;&#10;&#9;&#9;&#9;&#13;&#10;&#9;List&lt;Bestellung&gt; list = bs.findAllBestellungen();&#13;&#10;&#13;&#10;&#9;assertThat(list.size(), greaterThan(i));&#13;&#10;&#13;&#10;    }&#13;&#10;    &#13;&#10;    @Test&#13;&#10;    public void addBestellposition() {&#13;&#10;&#13;&#10;&#9;Integer[] datumZeit = {2011, 1, 10, 0, 0};&#13;&#10;&#9;&#13;&#10;&#9;Calendar c = new GregorianCalendar();&#13;&#10;&#9;c.set(Calendar.YEAR, datumZeit[0]);&#13;&#10;&#9;c.set(Calendar.MONTH, datumZeit[1]);&#13;&#10;&#9;c.set(Calendar.DAY_OF_MONTH, datumZeit[2]);&#13;&#10;&#9;c.set(Calendar.HOUR_OF_DAY, datumZeit[3]);&#13;&#10;&#9;c.set(Calendar.MINUTE, datumZeit[4]);&#13;&#10;&#13;&#10;&#9;Bestellung b = new Bestellung();&#13;&#10;&#9;b.setBezahlt(true);&#13;&#10;&#9;b.setVersandt(false);&#13;&#10;&#9;b.setBestellzeitpunkt(c.getTime());&#13;&#10;&#9;b.setZahlungsart(Zahlungsart.VORKASSE);&#13;&#10;&#9;&#13;&#10;&#9;Bestellung dbBest = bs.addBestellung(b);&#13;&#10;&#9;&#13;&#10;&#9;Artikel a = new Artikel();&#13;&#10;&#9;a.setKurzbezeichnung(&quot;kurzbezeichnung1&quot;);&#13;&#10;&#9;a.setBeschreibung(&quot;beschreibung1&quot;);&#13;&#10;&#9;a.setPreis(new BigDecimal(String.valueOf(10)));&#13;&#10;&#9;a.setKategorie(ArtikelKategorie.Poster);&#13;&#10;&#9;&#13;&#10;&#9;artikelDao.persist(a);&#13;&#10;&#9;&#13;&#10;&#9;BestellPosition bp = new BestellPosition();&#13;&#10;&#9;bp.setArtikel(a);&#13;&#10;&#9;bp.setBestellung(dbBest);&#13;&#10;&#9;bp.setMenge(1);&#13;&#10;&#13;&#10;&#9;&#13;&#10;&#9;int i = bestellpositionDao.findAll().size();&#13;&#10;&#9;&#13;&#10;&#9;bs.addBestellposition(bp);&#13;&#10;&#9;&#9;&#9;&#13;&#10;&#9;List&lt;BestellPosition&gt; list = bestellpositionDao.findAll();&#13;&#10;&#13;&#10;&#9;assertThat(list.size(), greaterThan(i));&#13;&#10;&#13;&#10;    }&#13;&#10;&#13;&#10;  &#13;&#10;}&#13;&#10;" Filename="BestellungServiceImplIntTest.java" Intrnl_Id="2"/>
+</SrcFileList>
+<CritList>
+<CritListEntry Name="org.codecover.model.utils.criteria.LoopCoverage" PluginName="org.codecover"/>
+<CritListEntry Name="org.codecover.model.utils.criteria.BranchCoverage" PluginName="org.codecover"/>
+<CritListEntry Name="org.codecover.model.utils.criteria.ConditionCoverage" PluginName="org.codecover"/>
+<CritListEntry Name="org.codecover.model.utils.criteria.SynchronizedStatementCoverage" PluginName="org.codecover"/>
+<CritListEntry Name="org.codecover.model.utils.criteria.QMOCoverage" PluginName="org.codecover"/>
+<CritListEntry Name="org.codecover.model.utils.criteria.StatementCoverage" PluginName="org.codecover"/>
+</CritList>
+<BoolOpList/>
+<HierarchyLvlTypeList>
+<HierarchyLvlType EnglishName="package" IntrnlName="package" Intrnl_Id="3"/>
+<HierarchyLvlType EnglishName="class" IntrnlName="class" Intrnl_Id="4"/>
+<HierarchyLvlType EnglishName="method" IntrnlName="method" Intrnl_Id="5"/>
+<HierarchyLvlType EnglishName="default package" IntrnlName="default package" Intrnl_Id="6"/>
+</HierarchyLvlTypeList>
+<MASTRoot>
+<HierarchyLvl HierarchyLvlId="42" HierarchyLvlTypeId="6" Intrnl_Id="7" Name="default package">
+<Header/>
+<LocList/>
+<HierarchyLvl HierarchyLvlId="41" HierarchyLvlTypeId="3" Intrnl_Id="8" Name="at">
+<Header/>
+<LocList/>
+<HierarchyLvl HierarchyLvlId="40" HierarchyLvlTypeId="3" Intrnl_Id="9" Name="ticketline">
+<Header/>
+<LocList/>
+<HierarchyLvl HierarchyLvlId="39" HierarchyLvlTypeId="3" Intrnl_Id="10" Name="test">
+<Header/>
+<LocList/>
+<HierarchyLvl HierarchyLvlId="38" HierarchyLvlTypeId="3" Intrnl_Id="11" Name="integration">
+<Header/>
+<LocList/>
+<HierarchyLvl HierarchyLvlId="26" HierarchyLvlTypeId="4" Intrnl_Id="12" Name="TopTenServiceImplIntTest">
+<Header>
+<Loc EndOffset="738" SrcFileId="1" StartOffset="672"/>
+</Header>
+<LocList>
+<Loc EndOffset="2316" SrcFileId="1" StartOffset="672"/>
+</LocList>
+<StmntSeq Intrnl_Id="13">
+<LocList>
+<Loc EndOffset="788" SrcFileId="1" StartOffset="748"/>
+</LocList>
+<BasicStmnt CovItemId="S1" CovItemPrefix="at.ticketline.test.integration.TopTenServiceImplIntTest.java" Intrnl_Id="14">
+<LocList>
+<Loc EndOffset="788" SrcFileId="1" StartOffset="748"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+<HierarchyLvl HierarchyLvlId="17" HierarchyLvlTypeId="5" Intrnl_Id="15" Name="getDataSet">
+<Header>
+<Loc EndOffset="886" SrcFileId="1" StartOffset="843"/>
+</Header>
+<LocList>
+<Loc EndOffset="948" SrcFileId="1" StartOffset="843"/>
+</LocList>
+<StmntSeq Intrnl_Id="16">
+<LocList>
+<Loc EndOffset="941" SrcFileId="1" StartOffset="891"/>
+</LocList>
+<BasicStmnt CovItemId="S2" CovItemPrefix="at.ticketline.test.integration.TopTenServiceImplIntTest.java" Intrnl_Id="17">
+<LocList>
+<Loc EndOffset="941" SrcFileId="1" StartOffset="891"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="18" HierarchyLvlTypeId="5" Intrnl_Id="18" Name="getSetUpOperation">
+<Header>
+<Loc EndOffset="1019" SrcFileId="1" StartOffset="960"/>
+</Header>
+<LocList>
+<Loc EndOffset="1069" SrcFileId="1" StartOffset="960"/>
+</LocList>
+<StmntSeq Intrnl_Id="19">
+<LocList>
+<Loc EndOffset="1062" SrcFileId="1" StartOffset="1024"/>
+</LocList>
+<BasicStmnt CovItemId="S3" CovItemPrefix="at.ticketline.test.integration.TopTenServiceImplIntTest.java" Intrnl_Id="20">
+<LocList>
+<Loc EndOffset="1062" SrcFileId="1" StartOffset="1024"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="19" HierarchyLvlTypeId="5" Intrnl_Id="21" Name="getTearDownOperation">
+<Header>
+<Loc EndOffset="1143" SrcFileId="1" StartOffset="1081"/>
+</Header>
+<LocList>
+<Loc EndOffset="1185" SrcFileId="1" StartOffset="1081"/>
+</LocList>
+<StmntSeq Intrnl_Id="22">
+<LocList>
+<Loc EndOffset="1178" SrcFileId="1" StartOffset="1148"/>
+</LocList>
+<BasicStmnt CovItemId="S4" CovItemPrefix="at.ticketline.test.integration.TopTenServiceImplIntTest.java" Intrnl_Id="23">
+<LocList>
+<Loc EndOffset="1178" SrcFileId="1" StartOffset="1148"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="20" HierarchyLvlTypeId="5" Intrnl_Id="24" Name="setUp">
+<Header>
+<Loc EndOffset="1241" SrcFileId="1" StartOffset="1197"/>
+</Header>
+<LocList>
+<Loc EndOffset="1349" SrcFileId="1" StartOffset="1197"/>
+</LocList>
+<StmntSeq Intrnl_Id="25">
+<LocList>
+<Loc EndOffset="1277" SrcFileId="1" StartOffset="1247"/>
+<Loc EndOffset="1342" SrcFileId="1" StartOffset="1280"/>
+</LocList>
+<BasicStmnt CovItemId="S5" CovItemPrefix="at.ticketline.test.integration.TopTenServiceImplIntTest.java" Intrnl_Id="26">
+<LocList>
+<Loc EndOffset="1277" SrcFileId="1" StartOffset="1247"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S6" CovItemPrefix="at.ticketline.test.integration.TopTenServiceImplIntTest.java" Intrnl_Id="27">
+<LocList>
+<Loc EndOffset="1342" SrcFileId="1" StartOffset="1280"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="21" HierarchyLvlTypeId="5" Intrnl_Id="28" Name="before">
+<Header>
+<Loc EndOffset="1411" SrcFileId="1" StartOffset="1361"/>
+</Header>
+<LocList>
+<Loc EndOffset="1438" SrcFileId="1" StartOffset="1361"/>
+</LocList>
+<StmntSeq Intrnl_Id="29">
+<LocList>
+<Loc EndOffset="1431" SrcFileId="1" StartOffset="1416"/>
+</LocList>
+<BasicStmnt CovItemId="S7" CovItemPrefix="at.ticketline.test.integration.TopTenServiceImplIntTest.java" Intrnl_Id="30">
+<LocList>
+<Loc EndOffset="1431" SrcFileId="1" StartOffset="1416"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="22" HierarchyLvlTypeId="5" Intrnl_Id="31" Name="after">
+<Header>
+<Loc EndOffset="1498" SrcFileId="1" StartOffset="1450"/>
+</Header>
+<LocList>
+<Loc EndOffset="1528" SrcFileId="1" StartOffset="1450"/>
+</LocList>
+<StmntSeq Intrnl_Id="32">
+<LocList>
+<Loc EndOffset="1521" SrcFileId="1" StartOffset="1503"/>
+</LocList>
+<BasicStmnt CovItemId="S8" CovItemPrefix="at.ticketline.test.integration.TopTenServiceImplIntTest.java" Intrnl_Id="33">
+<LocList>
+<Loc EndOffset="1521" SrcFileId="1" StartOffset="1503"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="23" HierarchyLvlTypeId="5" Intrnl_Id="34" Name="findVerkaufteTickets_ohneKategorie">
+<Header>
+<Loc EndOffset="1599" SrcFileId="1" StartOffset="1540"/>
+</Header>
+<LocList>
+<Loc EndOffset="1782" SrcFileId="1" StartOffset="1540"/>
+</LocList>
+<StmntSeq Intrnl_Id="35">
+<LocList>
+<Loc EndOffset="1652" SrcFileId="1" StartOffset="1604"/>
+<Loc EndOffset="1675" SrcFileId="1" StartOffset="1655"/>
+<Loc EndOffset="1735" SrcFileId="1" StartOffset="1678"/>
+<Loc EndOffset="1771" SrcFileId="1" StartOffset="1738"/>
+</LocList>
+<BasicStmnt CovItemId="S9" CovItemPrefix="at.ticketline.test.integration.TopTenServiceImplIntTest.java" Intrnl_Id="36">
+<LocList>
+<Loc EndOffset="1652" SrcFileId="1" StartOffset="1604"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S10" CovItemPrefix="at.ticketline.test.integration.TopTenServiceImplIntTest.java" Intrnl_Id="37">
+<LocList>
+<Loc EndOffset="1675" SrcFileId="1" StartOffset="1655"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S11" CovItemPrefix="at.ticketline.test.integration.TopTenServiceImplIntTest.java" Intrnl_Id="38">
+<LocList>
+<Loc EndOffset="1735" SrcFileId="1" StartOffset="1678"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S12" CovItemPrefix="at.ticketline.test.integration.TopTenServiceImplIntTest.java" Intrnl_Id="39">
+<LocList>
+<Loc EndOffset="1771" SrcFileId="1" StartOffset="1738"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="24" HierarchyLvlTypeId="5" Intrnl_Id="40" Name="findTopTen_mitKategorie">
+<Header>
+<Loc EndOffset="1842" SrcFileId="1" StartOffset="1794"/>
+</Header>
+<LocList>
+<Loc EndOffset="2022" SrcFileId="1" StartOffset="1794"/>
+</LocList>
+<StmntSeq Intrnl_Id="41">
+<LocList>
+<Loc EndOffset="1895" SrcFileId="1" StartOffset="1847"/>
+<Loc EndOffset="1918" SrcFileId="1" StartOffset="1898"/>
+<Loc EndOffset="1976" SrcFileId="1" StartOffset="1921"/>
+<Loc EndOffset="2012" SrcFileId="1" StartOffset="1979"/>
+</LocList>
+<BasicStmnt CovItemId="S13" CovItemPrefix="at.ticketline.test.integration.TopTenServiceImplIntTest.java" Intrnl_Id="42">
+<LocList>
+<Loc EndOffset="1895" SrcFileId="1" StartOffset="1847"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S14" CovItemPrefix="at.ticketline.test.integration.TopTenServiceImplIntTest.java" Intrnl_Id="43">
+<LocList>
+<Loc EndOffset="1918" SrcFileId="1" StartOffset="1898"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S15" CovItemPrefix="at.ticketline.test.integration.TopTenServiceImplIntTest.java" Intrnl_Id="44">
+<LocList>
+<Loc EndOffset="1976" SrcFileId="1" StartOffset="1921"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S16" CovItemPrefix="at.ticketline.test.integration.TopTenServiceImplIntTest.java" Intrnl_Id="45">
+<LocList>
+<Loc EndOffset="2012" SrcFileId="1" StartOffset="1979"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="25" HierarchyLvlTypeId="5" Intrnl_Id="46" Name="findTopTen_mitFalscherKategorie">
+<Header>
+<Loc EndOffset="2090" SrcFileId="1" StartOffset="2034"/>
+</Header>
+<LocList>
+<Loc EndOffset="2301" SrcFileId="1" StartOffset="2034"/>
+</LocList>
+<StmntSeq Intrnl_Id="47">
+<LocList>
+<Loc EndOffset="2143" SrcFileId="1" StartOffset="2095"/>
+<Loc EndOffset="2167" SrcFileId="1" StartOffset="2146"/>
+<Loc EndOffset="2255" SrcFileId="1" StartOffset="2170"/>
+<Loc EndOffset="2291" SrcFileId="1" StartOffset="2258"/>
+</LocList>
+<BasicStmnt CovItemId="S17" CovItemPrefix="at.ticketline.test.integration.TopTenServiceImplIntTest.java" Intrnl_Id="48">
+<LocList>
+<Loc EndOffset="2143" SrcFileId="1" StartOffset="2095"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S18" CovItemPrefix="at.ticketline.test.integration.TopTenServiceImplIntTest.java" Intrnl_Id="49">
+<LocList>
+<Loc EndOffset="2167" SrcFileId="1" StartOffset="2146"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S19" CovItemPrefix="at.ticketline.test.integration.TopTenServiceImplIntTest.java" Intrnl_Id="50">
+<LocList>
+<Loc EndOffset="2255" SrcFileId="1" StartOffset="2170"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S20" CovItemPrefix="at.ticketline.test.integration.TopTenServiceImplIntTest.java" Intrnl_Id="51">
+<LocList>
+<Loc EndOffset="2291" SrcFileId="1" StartOffset="2258"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="37" HierarchyLvlTypeId="4" Intrnl_Id="52" Name="BestellungServiceImplIntTest">
+<Header>
+<Loc EndOffset="1124" SrcFileId="2" StartOffset="1054"/>
+</Header>
+<LocList>
+<Loc EndOffset="4753" SrcFileId="2" StartOffset="1054"/>
+</LocList>
+<StmntSeq Intrnl_Id="53">
+<LocList>
+<Loc EndOffset="1184" SrcFileId="2" StartOffset="1134"/>
+<Loc EndOffset="1250" SrcFileId="2" StartOffset="1190"/>
+<Loc EndOffset="1304" SrcFileId="2" StartOffset="1260"/>
+</LocList>
+<BasicStmnt CovItemId="S1" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="54">
+<LocList>
+<Loc EndOffset="1184" SrcFileId="2" StartOffset="1134"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S2" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="55">
+<LocList>
+<Loc EndOffset="1250" SrcFileId="2" StartOffset="1190"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S3" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="56">
+<LocList>
+<Loc EndOffset="1304" SrcFileId="2" StartOffset="1260"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+<HierarchyLvl HierarchyLvlId="27" HierarchyLvlTypeId="5" Intrnl_Id="57" Name="getDataSet">
+<Header>
+<Loc EndOffset="1405" SrcFileId="2" StartOffset="1362"/>
+</Header>
+<LocList>
+<Loc EndOffset="1471" SrcFileId="2" StartOffset="1362"/>
+</LocList>
+<StmntSeq Intrnl_Id="58">
+<LocList>
+<Loc EndOffset="1464" SrcFileId="2" StartOffset="1410"/>
+</LocList>
+<BasicStmnt CovItemId="S4" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="59">
+<LocList>
+<Loc EndOffset="1464" SrcFileId="2" StartOffset="1410"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="28" HierarchyLvlTypeId="5" Intrnl_Id="60" Name="getSetUpOperation">
+<Header>
+<Loc EndOffset="1538" SrcFileId="2" StartOffset="1479"/>
+</Header>
+<LocList>
+<Loc EndOffset="1588" SrcFileId="2" StartOffset="1479"/>
+</LocList>
+<StmntSeq Intrnl_Id="61">
+<LocList>
+<Loc EndOffset="1581" SrcFileId="2" StartOffset="1543"/>
+</LocList>
+<BasicStmnt CovItemId="S5" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="62">
+<LocList>
+<Loc EndOffset="1581" SrcFileId="2" StartOffset="1543"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="29" HierarchyLvlTypeId="5" Intrnl_Id="63" Name="getTearDownOperation">
+<Header>
+<Loc EndOffset="1658" SrcFileId="2" StartOffset="1596"/>
+</Header>
+<LocList>
+<Loc EndOffset="1700" SrcFileId="2" StartOffset="1596"/>
+</LocList>
+<StmntSeq Intrnl_Id="64">
+<LocList>
+<Loc EndOffset="1693" SrcFileId="2" StartOffset="1663"/>
+</LocList>
+<BasicStmnt CovItemId="S6" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="65">
+<LocList>
+<Loc EndOffset="1693" SrcFileId="2" StartOffset="1663"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="30" HierarchyLvlTypeId="5" Intrnl_Id="66" Name="setUp">
+<Header>
+<Loc EndOffset="1752" SrcFileId="2" StartOffset="1708"/>
+</Header>
+<LocList>
+<Loc EndOffset="2044" SrcFileId="2" StartOffset="1708"/>
+</LocList>
+<StmntSeq Intrnl_Id="67">
+<LocList>
+<Loc EndOffset="1791" SrcFileId="2" StartOffset="1758"/>
+<Loc EndOffset="1871" SrcFileId="2" StartOffset="1794"/>
+<Loc EndOffset="1966" SrcFileId="2" StartOffset="1874"/>
+<Loc EndOffset="2037" SrcFileId="2" StartOffset="1969"/>
+</LocList>
+<BasicStmnt CovItemId="S7" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="68">
+<LocList>
+<Loc EndOffset="1791" SrcFileId="2" StartOffset="1758"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S8" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="69">
+<LocList>
+<Loc EndOffset="1871" SrcFileId="2" StartOffset="1794"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S9" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="70">
+<LocList>
+<Loc EndOffset="1966" SrcFileId="2" StartOffset="1874"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S10" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="71">
+<LocList>
+<Loc EndOffset="2037" SrcFileId="2" StartOffset="1969"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="31" HierarchyLvlTypeId="5" Intrnl_Id="72" Name="before">
+<Header>
+<Loc EndOffset="2102" SrcFileId="2" StartOffset="2052"/>
+</Header>
+<LocList>
+<Loc EndOffset="2129" SrcFileId="2" StartOffset="2052"/>
+</LocList>
+<StmntSeq Intrnl_Id="73">
+<LocList>
+<Loc EndOffset="2122" SrcFileId="2" StartOffset="2107"/>
+</LocList>
+<BasicStmnt CovItemId="S11" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="74">
+<LocList>
+<Loc EndOffset="2122" SrcFileId="2" StartOffset="2107"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="32" HierarchyLvlTypeId="5" Intrnl_Id="75" Name="after">
+<Header>
+<Loc EndOffset="2185" SrcFileId="2" StartOffset="2137"/>
+</Header>
+<LocList>
+<Loc EndOffset="2215" SrcFileId="2" StartOffset="2137"/>
+</LocList>
+<StmntSeq Intrnl_Id="76">
+<LocList>
+<Loc EndOffset="2208" SrcFileId="2" StartOffset="2190"/>
+</LocList>
+<BasicStmnt CovItemId="S12" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="77">
+<LocList>
+<Loc EndOffset="2208" SrcFileId="2" StartOffset="2190"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="33" HierarchyLvlTypeId="5" Intrnl_Id="78" Name="findByBestellung">
+<Header>
+<Loc EndOffset="2266" SrcFileId="2" StartOffset="2225"/>
+</Header>
+<LocList>
+<Loc EndOffset="2586" SrcFileId="2" StartOffset="2225"/>
+</LocList>
+<StmntSeq Intrnl_Id="79">
+<LocList>
+<Loc EndOffset="2303" SrcFileId="2" StartOffset="2271"/>
+<Loc EndOffset="2325" SrcFileId="2" StartOffset="2306"/>
+<Loc EndOffset="2348" SrcFileId="2" StartOffset="2328"/>
+<Loc EndOffset="2398" SrcFileId="2" StartOffset="2351"/>
+<Loc EndOffset="2434" SrcFileId="2" StartOffset="2403"/>
+<Loc EndOffset="2482" SrcFileId="2" StartOffset="2437"/>
+<Loc EndOffset="2577" SrcFileId="2" StartOffset="2485"/>
+</LocList>
+<BasicStmnt CovItemId="S13" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="80">
+<LocList>
+<Loc EndOffset="2303" SrcFileId="2" StartOffset="2271"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S14" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="81">
+<LocList>
+<Loc EndOffset="2325" SrcFileId="2" StartOffset="2306"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S15" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="82">
+<LocList>
+<Loc EndOffset="2348" SrcFileId="2" StartOffset="2328"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S16" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="83">
+<LocList>
+<Loc EndOffset="2398" SrcFileId="2" StartOffset="2351"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S17" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="84">
+<LocList>
+<Loc EndOffset="2434" SrcFileId="2" StartOffset="2403"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S18" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="85">
+<LocList>
+<Loc EndOffset="2482" SrcFileId="2" StartOffset="2437"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S19" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="86">
+<LocList>
+<Loc EndOffset="2577" SrcFileId="2" StartOffset="2485"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="34" HierarchyLvlTypeId="5" Intrnl_Id="87" Name="findAllBestellungen">
+<Header>
+<Loc EndOffset="2638" SrcFileId="2" StartOffset="2594"/>
+</Header>
+<LocList>
+<Loc EndOffset="2929" SrcFileId="2" StartOffset="2594"/>
+</LocList>
+<StmntSeq Intrnl_Id="88">
+<LocList>
+<Loc EndOffset="2693" SrcFileId="2" StartOffset="2645"/>
+<Loc EndOffset="2729" SrcFileId="2" StartOffset="2698"/>
+<Loc EndOffset="2777" SrcFileId="2" StartOffset="2732"/>
+<Loc EndOffset="2825" SrcFileId="2" StartOffset="2780"/>
+<Loc EndOffset="2920" SrcFileId="2" StartOffset="2828"/>
+</LocList>
+<BasicStmnt CovItemId="S20" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="89">
+<LocList>
+<Loc EndOffset="2693" SrcFileId="2" StartOffset="2645"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S21" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="90">
+<LocList>
+<Loc EndOffset="2729" SrcFileId="2" StartOffset="2698"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S22" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="91">
+<LocList>
+<Loc EndOffset="2777" SrcFileId="2" StartOffset="2732"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S23" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="92">
+<LocList>
+<Loc EndOffset="2825" SrcFileId="2" StartOffset="2780"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S24" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="93">
+<LocList>
+<Loc EndOffset="2920" SrcFileId="2" StartOffset="2828"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="35" HierarchyLvlTypeId="5" Intrnl_Id="94" Name="addBestellung">
+<Header>
+<Loc EndOffset="2979" SrcFileId="2" StartOffset="2941"/>
+</Header>
+<LocList>
+<Loc EndOffset="3626" SrcFileId="2" StartOffset="2941"/>
+</LocList>
+<StmntSeq Intrnl_Id="95">
+<LocList>
+<Loc EndOffset="3028" SrcFileId="2" StartOffset="2986"/>
+<Loc EndOffset="3071" SrcFileId="2" StartOffset="3034"/>
+<Loc EndOffset="3109" SrcFileId="2" StartOffset="3074"/>
+<Loc EndOffset="3148" SrcFileId="2" StartOffset="3112"/>
+<Loc EndOffset="3194" SrcFileId="2" StartOffset="3151"/>
+<Loc EndOffset="3239" SrcFileId="2" StartOffset="3197"/>
+<Loc EndOffset="3279" SrcFileId="2" StartOffset="3242"/>
+<Loc EndOffset="3316" SrcFileId="2" StartOffset="3284"/>
+<Loc EndOffset="3338" SrcFileId="2" StartOffset="3319"/>
+<Loc EndOffset="3362" SrcFileId="2" StartOffset="3341"/>
+<Loc EndOffset="3400" SrcFileId="2" StartOffset="3365"/>
+<Loc EndOffset="3442" SrcFileId="2" StartOffset="3403"/>
+<Loc EndOffset="3489" SrcFileId="2" StartOffset="3450"/>
+<Loc EndOffset="3515" SrcFileId="2" StartOffset="3495"/>
+<Loc EndOffset="3572" SrcFileId="2" StartOffset="3523"/>
+<Loc EndOffset="3617" SrcFileId="2" StartOffset="3577"/>
+</LocList>
+<BasicStmnt CovItemId="S25" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="96">
+<LocList>
+<Loc EndOffset="3028" SrcFileId="2" StartOffset="2986"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S26" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="97">
+<LocList>
+<Loc EndOffset="3071" SrcFileId="2" StartOffset="3034"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S27" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="98">
+<LocList>
+<Loc EndOffset="3109" SrcFileId="2" StartOffset="3074"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S28" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="99">
+<LocList>
+<Loc EndOffset="3148" SrcFileId="2" StartOffset="3112"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S29" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="100">
+<LocList>
+<Loc EndOffset="3194" SrcFileId="2" StartOffset="3151"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S30" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="101">
+<LocList>
+<Loc EndOffset="3239" SrcFileId="2" StartOffset="3197"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S31" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="102">
+<LocList>
+<Loc EndOffset="3279" SrcFileId="2" StartOffset="3242"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S32" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="103">
+<LocList>
+<Loc EndOffset="3316" SrcFileId="2" StartOffset="3284"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S33" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="104">
+<LocList>
+<Loc EndOffset="3338" SrcFileId="2" StartOffset="3319"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S34" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="105">
+<LocList>
+<Loc EndOffset="3362" SrcFileId="2" StartOffset="3341"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S35" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="106">
+<LocList>
+<Loc EndOffset="3400" SrcFileId="2" StartOffset="3365"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S36" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="107">
+<LocList>
+<Loc EndOffset="3442" SrcFileId="2" StartOffset="3403"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S37" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="108">
+<LocList>
+<Loc EndOffset="3489" SrcFileId="2" StartOffset="3450"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S38" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="109">
+<LocList>
+<Loc EndOffset="3515" SrcFileId="2" StartOffset="3495"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S39" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="110">
+<LocList>
+<Loc EndOffset="3572" SrcFileId="2" StartOffset="3523"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S40" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="111">
+<LocList>
+<Loc EndOffset="3617" SrcFileId="2" StartOffset="3577"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="36" HierarchyLvlTypeId="5" Intrnl_Id="112" Name="addBestellposition">
+<Header>
+<Loc EndOffset="3681" SrcFileId="2" StartOffset="3638"/>
+</Header>
+<LocList>
+<Loc EndOffset="4744" SrcFileId="2" StartOffset="3638"/>
+</LocList>
+<StmntSeq Intrnl_Id="113">
+<LocList>
+<Loc EndOffset="3730" SrcFileId="2" StartOffset="3688"/>
+<Loc EndOffset="3773" SrcFileId="2" StartOffset="3736"/>
+<Loc EndOffset="3811" SrcFileId="2" StartOffset="3776"/>
+<Loc EndOffset="3850" SrcFileId="2" StartOffset="3814"/>
+<Loc EndOffset="3896" SrcFileId="2" StartOffset="3853"/>
+<Loc EndOffset="3941" SrcFileId="2" StartOffset="3899"/>
+<Loc EndOffset="3981" SrcFileId="2" StartOffset="3944"/>
+<Loc EndOffset="4018" SrcFileId="2" StartOffset="3986"/>
+<Loc EndOffset="4040" SrcFileId="2" StartOffset="4021"/>
+<Loc EndOffset="4064" SrcFileId="2" StartOffset="4043"/>
+<Loc EndOffset="4102" SrcFileId="2" StartOffset="4067"/>
+<Loc EndOffset="4144" SrcFileId="2" StartOffset="4105"/>
+<Loc EndOffset="4190" SrcFileId="2" StartOffset="4150"/>
+<Loc EndOffset="4222" SrcFileId="2" StartOffset="4196"/>
+<Loc EndOffset="4266" SrcFileId="2" StartOffset="4225"/>
+<Loc EndOffset="4304" SrcFileId="2" StartOffset="4269"/>
+<Loc EndOffset="4354" SrcFileId="2" StartOffset="4307"/>
+<Loc EndOffset="4397" SrcFileId="2" StartOffset="4357"/>
+<Loc EndOffset="4425" SrcFileId="2" StartOffset="4403"/>
+<Loc EndOffset="4474" SrcFileId="2" StartOffset="4431"/>
+<Loc EndOffset="4494" SrcFileId="2" StartOffset="4477"/>
+<Loc EndOffset="4522" SrcFileId="2" StartOffset="4497"/>
+<Loc EndOffset="4540" SrcFileId="2" StartOffset="4525"/>
+<Loc EndOffset="4592" SrcFileId="2" StartOffset="4548"/>
+<Loc EndOffset="4624" SrcFileId="2" StartOffset="4598"/>
+<Loc EndOffset="4690" SrcFileId="2" StartOffset="4632"/>
+<Loc EndOffset="4735" SrcFileId="2" StartOffset="4695"/>
+</LocList>
+<BasicStmnt CovItemId="S41" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="114">
+<LocList>
+<Loc EndOffset="3730" SrcFileId="2" StartOffset="3688"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S42" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="115">
+<LocList>
+<Loc EndOffset="3773" SrcFileId="2" StartOffset="3736"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S43" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="116">
+<LocList>
+<Loc EndOffset="3811" SrcFileId="2" StartOffset="3776"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S44" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="117">
+<LocList>
+<Loc EndOffset="3850" SrcFileId="2" StartOffset="3814"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S45" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="118">
+<LocList>
+<Loc EndOffset="3896" SrcFileId="2" StartOffset="3853"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S46" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="119">
+<LocList>
+<Loc EndOffset="3941" SrcFileId="2" StartOffset="3899"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S47" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="120">
+<LocList>
+<Loc EndOffset="3981" SrcFileId="2" StartOffset="3944"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S48" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="121">
+<LocList>
+<Loc EndOffset="4018" SrcFileId="2" StartOffset="3986"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S49" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="122">
+<LocList>
+<Loc EndOffset="4040" SrcFileId="2" StartOffset="4021"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S50" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="123">
+<LocList>
+<Loc EndOffset="4064" SrcFileId="2" StartOffset="4043"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S51" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="124">
+<LocList>
+<Loc EndOffset="4102" SrcFileId="2" StartOffset="4067"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S52" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="125">
+<LocList>
+<Loc EndOffset="4144" SrcFileId="2" StartOffset="4105"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S53" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="126">
+<LocList>
+<Loc EndOffset="4190" SrcFileId="2" StartOffset="4150"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S54" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="127">
+<LocList>
+<Loc EndOffset="4222" SrcFileId="2" StartOffset="4196"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S55" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="128">
+<LocList>
+<Loc EndOffset="4266" SrcFileId="2" StartOffset="4225"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S56" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="129">
+<LocList>
+<Loc EndOffset="4304" SrcFileId="2" StartOffset="4269"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S57" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="130">
+<LocList>
+<Loc EndOffset="4354" SrcFileId="2" StartOffset="4307"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S58" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="131">
+<LocList>
+<Loc EndOffset="4397" SrcFileId="2" StartOffset="4357"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S59" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="132">
+<LocList>
+<Loc EndOffset="4425" SrcFileId="2" StartOffset="4403"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S60" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="133">
+<LocList>
+<Loc EndOffset="4474" SrcFileId="2" StartOffset="4431"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S61" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="134">
+<LocList>
+<Loc EndOffset="4494" SrcFileId="2" StartOffset="4477"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S62" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="135">
+<LocList>
+<Loc EndOffset="4522" SrcFileId="2" StartOffset="4497"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S63" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="136">
+<LocList>
+<Loc EndOffset="4540" SrcFileId="2" StartOffset="4525"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S64" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="137">
+<LocList>
+<Loc EndOffset="4592" SrcFileId="2" StartOffset="4548"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S65" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="138">
+<LocList>
+<Loc EndOffset="4624" SrcFileId="2" StartOffset="4598"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S66" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="139">
+<LocList>
+<Loc EndOffset="4690" SrcFileId="2" StartOffset="4632"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S67" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="140">
+<LocList>
+<Loc EndOffset="4735" SrcFileId="2" StartOffset="4695"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+</HierarchyLvl>
+</HierarchyLvl>
+</HierarchyLvl>
+</HierarchyLvl>
+</HierarchyLvl>
+</HierarchyLvl>
+</MASTRoot>
+<TestSession Comment="" Date="1295798990861" Name="23.01.2011 17:09:50">
+<TestCase Comment="" Date="1295798980005" Name="at.ticketline.test.integration.TopTenServiceImplIntTest:findVerkaufteTickets_ohneKategorie">
+<CovList>
+<CovPrefix CovItemPrefix="at.ticketline.test.integration.TopTenServiceImplIntTest.java">
+<Cov CovItemId="S10" Value="1"/>
+<Cov CovItemId="S11" Value="1"/>
+<Cov CovItemId="S12" Value="1"/>
+<Cov CovItemId="S2" Value="1"/>
+<Cov CovItemId="S3" Value="1"/>
+<Cov CovItemId="S4" Value="1"/>
+<Cov CovItemId="S7" Value="1"/>
+<Cov CovItemId="S8" Value="1"/>
+<Cov CovItemId="S9" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList/>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<TestCase Comment="" Date="1295798988989" Name="at.ticketline.test.integration.TopTenServiceImplIntTest:findTopTen_mitKategorie">
+<CovList>
+<CovPrefix CovItemPrefix="at.ticketline.test.integration.TopTenServiceImplIntTest.java">
+<Cov CovItemId="S13" Value="1"/>
+<Cov CovItemId="S14" Value="1"/>
+<Cov CovItemId="S15" Value="1"/>
+<Cov CovItemId="S16" Value="1"/>
+<Cov CovItemId="S2" Value="1"/>
+<Cov CovItemId="S3" Value="1"/>
+<Cov CovItemId="S4" Value="1"/>
+<Cov CovItemId="S7" Value="1"/>
+<Cov CovItemId="S8" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList/>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<TestCase Comment="" Date="1295798989685" Name="at.ticketline.test.integration.TopTenServiceImplIntTest:findTopTen_mitFalscherKategorie">
+<CovList>
+<CovPrefix CovItemPrefix="at.ticketline.test.integration.TopTenServiceImplIntTest.java">
+<Cov CovItemId="S17" Value="1"/>
+<Cov CovItemId="S18" Value="1"/>
+<Cov CovItemId="S19" Value="1"/>
+<Cov CovItemId="S2" Value="1"/>
+<Cov CovItemId="S20" Value="1"/>
+<Cov CovItemId="S3" Value="1"/>
+<Cov CovItemId="S4" Value="1"/>
+<Cov CovItemId="S7" Value="1"/>
+<Cov CovItemId="S8" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList/>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<MetaDataList/>
+</TestSession>
+</TestSessionContainer>

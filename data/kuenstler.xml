@@ -1,0 +1,35 @@
+<list>
+  <at.ticketline.entity.Kuenstler>
+    <version>0</version>
+    <nachname>Mozart</nachname>
+    <vorname>Wolfgang A.</vorname>
+    <geschlecht>MAENNLICH</geschlecht>
+    <geburtsdatum>
+      <time>-6750954000000</time>
+      <timezone>Europe/Berlin</timezone>
+    </geburtsdatum>
+    <engagements/>
+  </at.ticketline.entity.Kuenstler>
+  <at.ticketline.entity.Kuenstler>
+    <version>0</version>
+    <nachname>Schwarzenegger</nachname>
+    <vorname>Arnold</vorname>
+    <geschlecht>MAENNLICH</geschlecht>
+    <geburtsdatum>
+      <time>-707709600000</time>
+      <timezone>Europe/Berlin</timezone>
+    </geburtsdatum>
+    <engagements/>
+  </at.ticketline.entity.Kuenstler>
+  <at.ticketline.entity.Kuenstler>
+    <version>0</version>
+    <nachname>Albert</nachname>
+    <vorname>Barbara</vorname>
+    <geschlecht>WEIBLICH</geschlecht>
+    <geburtsdatum>
+      <time>180572400000</time>
+      <timezone>Europe/Berlin</timezone>
+    </geburtsdatum>
+    <engagements/>
+  </at.ticketline.entity.Kuenstler>
+</list>

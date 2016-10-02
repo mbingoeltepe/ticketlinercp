@@ -1,0 +1,30 @@
+<dataset>
+	<Person 
+	strasse="Strasse1"
+	ort="Ort1"
+	plz="1001"
+	vorname="Vorname Kunde"
+	nachname="Nachname Kunde"
+	geschlecht="1"
+	gruppe="0"
+	typ="K">
+	</Person>
+	<Person 
+	strasse="Strasse1"
+	ort="Ort1"
+	plz="1001"	
+	username="User Mitarbeiter"
+	passwort="Passwort Mitarbeiter"
+	vorname="Vorname Mitarbeiter"
+	nachname="Nachname Mitarbeiter"
+	geschlecht="0"
+	typ="M">
+	</Person>
+	<Transaktion 
+	datumuhrzeit="2011-01-31 20:00:00" 
+	status="0" 
+	reservierungsnr="1234" 
+	zahlungsart="3" 
+	version="1">
+	</Transaktion>
+	</dataset>

@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/245/trunk/TicketlineRCP
+END
+start_db_manager.bat
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/8/trunk/TicketlineRCP/start_db_manager.bat
+END
+start_db.bat
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/8/trunk/TicketlineRCP/start_db.bat
+END
+dropIfExistsDDL.jdbc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/113/trunk/TicketlineRCP/dropIfExistsDDL.jdbc
+END
+createDDL.jdbc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/269/trunk/TicketlineRCP/createDDL.jdbc
+END
+at.ticketline.kassa.product
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/65/trunk/TicketlineRCP/at.ticketline.kassa.product
+END
+clearDDL.jdbc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/216/trunk/TicketlineRCP/clearDDL.jdbc
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/8/trunk/TicketlineRCP/.project
+END
+dropDDL.jdbc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/269/trunk/TicketlineRCP/dropDDL.jdbc
+END
+plugin.xml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/313/trunk/TicketlineRCP/plugin.xml
+END
+plugin_customization.ini
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/65/trunk/TicketlineRCP/plugin_customization.ini
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/249/trunk/TicketlineRCP/.classpath
+END

@@ -1,0 +1,913 @@
+<class-diagram version="0.9.86" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true">  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.entity.Artikel" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/entity/Artikel.java" binary="false">    
+    <position x="1116" y="1067" width="250" height="419"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.entity.Engagement" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/entity/Engagement.java" binary="false">    
+    <position x="225" y="1067" width="206" height="291"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <enumeration corner="BOTTOM_RIGHT" language="java" name="at.ticketline.entity.VerkaufenReservieren" 
+    project="TicketlineRCP" file="/TicketlineRCP/src/at/ticketline/entity/VerkaufenReservieren.java" binary="false">    
+    <position x="286" y="37" width="207" height="83"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </enumeration>  
+  <enumeration corner="BOTTOM_RIGHT" language="java" name="at.ticketline.entity.Berechtigung" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/entity/Berechtigung.java" binary="false">    
+    <position x="240" y="2449" width="221" height="115"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </enumeration>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.entity.BaseEntity" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/entity/BaseEntity.java" binary="false">    
+    <position x="1257" y="37" width="100" height="83"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.entity.Saal" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/entity/Saal.java" binary="false">    
+    <position x="1532" y="2449" width="236" height="323"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <enumeration corner="BOTTOM_RIGHT" language="java" name="at.ticketline.entity.PreisKategorie" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/entity/PreisKategorie.java" binary="false">    
+    <position x="1572" y="1718" width="183" height="99"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </enumeration>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.entity.Kuenstler" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/entity/Kuenstler.java" binary="false">    
+    <position x="416" y="176" width="231" height="435"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.entity.Transaktion" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/entity/Transaktion.java" binary="false">    
+    <position x="504" y="2449" width="195" height="387"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <enumeration corner="BOTTOM_RIGHT" language="java" name="at.ticketline.entity.Kundengruppe" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/entity/Kundengruppe.java" binary="false">    
+    <position x="739" y="2449" width="156" height="115"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </enumeration>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.entity.Ort" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/entity/Ort.java" binary="false">    
+    <position x="748" y="1067" width="200" height="611"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.entity.Bestellung" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/entity/Bestellung.java" binary="false">    
+    <position x="1242" y="2449" width="250" height="419"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <enumeration corner="BOTTOM_RIGHT" language="java" name="at.ticketline.entity.Zahlungsart" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/entity/Zahlungsart.java" binary="false">    
+    <position x="873" y="2908" width="156" height="131"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </enumeration>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.entity.Auffuehrung" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/entity/Auffuehrung.java" binary="false">    
+    <position x="1511" y="1067" width="206" height="403"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.entity.Reihe" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/entity/Reihe.java" binary="false">    
+    <position x="1943" y="1718" width="180" height="467"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.entity.Veranstaltung" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/entity/Veranstaltung.java" binary="false">    
+    <position x="1000" y="176" width="236" height="851"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.entity.Adresse" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/entity/Adresse.java" binary="false">    
+    <position x="62" y="1718" width="138" height="275"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <enumeration corner="BOTTOM_RIGHT" language="java" name="at.ticketline.entity.PlatzStatus" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/entity/PlatzStatus.java" binary="false">    
+    <position x="1757" y="1067" width="144" height="99"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </enumeration>  
+  <enumeration corner="BOTTOM_RIGHT" language="java" name="at.ticketline.entity.LoginStatus" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/entity/LoginStatus.java" binary="false">    
+    <position x="779" y="37" width="191" height="99"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </enumeration>  
+  <enumeration corner="BOTTOM_RIGHT" language="java" name="at.ticketline.entity.Transaktionsstatus" 
+    project="TicketlineRCP" file="/TicketlineRCP/src/at/ticketline/entity/Transaktionsstatus.java" binary="false">    
+    <position x="504" y="2908" width="199" height="99"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </enumeration>  
+  <enumeration corner="BOTTOM_RIGHT" language="java" name="at.ticketline.entity.Geschlecht" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/entity/Geschlecht.java" binary="false">    
+    <position x="471" y="1067" width="174" height="115"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </enumeration>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.entity.Person" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/entity/Person.java" binary="false">    
+    <position x="687" y="176" width="231" height="611"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.entity.Kategorie" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/entity/Kategorie.java" binary="false">    
+    <position x="1983" y="1067" width="168" height="355"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.entity.Kunde" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/entity/Kunde.java" binary="false">    
+    <position x="504" y="1718" width="224" height="691"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.entity.Mitarbeiter" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/entity/Mitarbeiter.java" binary="false">    
+    <position x="240" y="1718" width="224" height="291"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <enumeration corner="BOTTOM_RIGHT" language="java" name="at.ticketline.entity.Kreditkartentyp" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/entity/Kreditkartentyp.java" binary="false">    
+    <position x="935" y="2449" width="207" height="115"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </enumeration>  
+  <enumeration corner="BOTTOM_RIGHT" language="java" name="at.ticketline.entity.Ortstyp" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/entity/Ortstyp.java" binary="false">    
+    <position x="810" y="1718" width="158" height="179"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </enumeration>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.entity.News" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/entity/News.java" binary="false">    
+    <position x="1008" y="1718" width="124" height="291"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.entity.Platz" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/entity/Platz.java" binary="false">    
+    <position x="1551" y="176" width="196" height="339"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <enumeration corner="BOTTOM_RIGHT" language="java" name="at.ticketline.entity.ArtikelKategorie" 
+    project="TicketlineRCP" file="/TicketlineRCP/src/at/ticketline/entity/ArtikelKategorie.java" binary="false">    
+    <position x="1172" y="1718" width="194" height="163"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </enumeration>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.entity.BestellPosition" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/entity/BestellPosition.java" binary="false">    
+    <position x="1297" y="176" width="172" height="243"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <generalization>    
+    <bendpoint x="948" y="176"/>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Ort" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Ort.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.BaseEntity" 
+      file="/TicketlineRCP/src/at/ticketline/entity/BaseEntity.java" binary="false"/>  
+  </generalization>  
+  <association>    
+    <bendpoint x="1438" y="1067"/>    
+    <bendpoint x="1396" y="1718"/>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Platz" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Platz.java" binary="false" navigable="false">      
+      <attribute name="transaktion"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Transaktion" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Transaktion.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Veranstaltung" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Veranstaltung.java" binary="false" navigable="false">      
+      <attribute name="artikel"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Artikel" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Artikel.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Artikel" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Artikel.java" binary="false" navigable="false">      
+      <attribute name="bestellPositionen"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.BestellPosition" 
+      file="/TicketlineRCP/src/at/ticketline/entity/BestellPosition.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Veranstaltung" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Veranstaltung.java" binary="false" navigable="false">      
+      <attribute name="engagements"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Engagement" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Engagement.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Kunde" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Kunde.java" binary="false" navigable="false">      
+      <attribute name="kreditkartentyp"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Kreditkartentyp" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Kreditkartentyp.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Person" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Person.java" binary="false" navigable="false">      
+      <attribute name="ort"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Ort" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Ort.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Transaktion" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Transaktion.java" binary="false" navigable="false">      
+      <attribute name="kunde"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Kunde" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Kunde.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Platz" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Platz.java" binary="false" navigable="false">      
+      <attribute name="status"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.PlatzStatus" 
+      file="/TicketlineRCP/src/at/ticketline/entity/PlatzStatus.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Ort" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Ort.java" binary="false" navigable="false">      
+      <attribute name="news"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.News" 
+      file="/TicketlineRCP/src/at/ticketline/entity/News.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Kunde" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Kunde.java" binary="false" navigable="false">      
+      <attribute name="ktransaktionen"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Transaktion" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Transaktion.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Kunde" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Kunde.java" binary="false" navigable="false">      
+      <attribute name="gruppe"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Kundengruppe" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Kundengruppe.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Mitarbeiter" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Mitarbeiter.java" binary="false" navigable="false">      
+      <attribute name="berechtigung"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Berechtigung" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Berechtigung.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Artikel" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Artikel.java" binary="false" navigable="false">      
+      <attribute name="veranstaltung"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Veranstaltung" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Veranstaltung.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <bendpoint x="675" y="1067"/>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Person" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Person.java" binary="false" navigable="false">      
+      <attribute name="adresse"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Adresse" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Adresse.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <bendpoint x="1438" y="1718"/>    
+    <bendpoint x="1459" y="1067"/>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Transaktion" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Transaktion.java" binary="false" navigable="false">      
+      <attribute name="plaetze"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Platz" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Platz.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization>    
+    <bendpoint x="978" y="1067"/>    
+    <bendpoint x="969" y="176"/>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.News" 
+      file="/TicketlineRCP/src/at/ticketline/entity/News.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.BaseEntity" 
+      file="/TicketlineRCP/src/at/ticketline/entity/BaseEntity.java" binary="false"/>  
+  </generalization>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Person" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Person.java" binary="false" navigable="false">      
+      <attribute name="geschlecht"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Geschlecht" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Geschlecht.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <bendpoint x="758" y="1718"/>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Ort" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Ort.java" binary="false" navigable="false">      
+      <attribute name="saele"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Saal" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Saal.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Person" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Person.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.BaseEntity" 
+      file="/TicketlineRCP/src/at/ticketline/entity/BaseEntity.java" binary="false"/>  
+  </generalization>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Artikel" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Artikel.java" binary="false" navigable="false">      
+      <attribute name="kategorie"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.ArtikelKategorie" 
+      file="/TicketlineRCP/src/at/ticketline/entity/ArtikelKategorie.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <bendpoint x="1459" y="1718"/>    
+    <bendpoint x="1417" y="1067"/>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Bestellung" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Bestellung.java" binary="false" navigable="false">      
+      <attribute name="bestellPositionen"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.BestellPosition" 
+      file="/TicketlineRCP/src/at/ticketline/entity/BestellPosition.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Veranstaltung" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Veranstaltung.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.BaseEntity" 
+      file="/TicketlineRCP/src/at/ticketline/entity/BaseEntity.java" binary="false"/>  
+  </generalization>  
+  <generalization>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Platz" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Platz.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.BaseEntity" 
+      file="/TicketlineRCP/src/at/ticketline/entity/BaseEntity.java" binary="false"/>  
+  </generalization>  
+  <generalization>    
+    <bendpoint x="1266" y="176"/>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Artikel" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Artikel.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.BaseEntity" 
+      file="/TicketlineRCP/src/at/ticketline/entity/BaseEntity.java" binary="false"/>  
+  </generalization>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Transaktion" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Transaktion.java" binary="false" navigable="false">      
+      <attribute name="mitarbeiter"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Mitarbeiter" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Mitarbeiter.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Kunde" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Kunde.java" binary="false" navigable="false">      
+      <attribute name="bestellungen"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Bestellung" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Bestellung.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Ort" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Ort.java" binary="false" navigable="false">      
+      <attribute name="mitarbeiter"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Mitarbeiter" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Mitarbeiter.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Reihe" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Reihe.java" binary="false" navigable="false">      
+      <attribute name="saal"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Saal" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Saal.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization>    
+    <bendpoint x="1520" y="176"/>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Auffuehrung" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Auffuehrung.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.BaseEntity" 
+      file="/TicketlineRCP/src/at/ticketline/entity/BaseEntity.java" binary="false"/>  
+  </generalization>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Auffuehrung" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Auffuehrung.java" binary="false" navigable="false">      
+      <attribute name="plaetze"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Platz" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Platz.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Kuenstler" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Kuenstler.java" binary="false" navigable="false">      
+      <attribute name="engagements"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Engagement" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Engagement.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Ort" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Ort.java" binary="false" navigable="false">      
+      <attribute name="typ"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Ortstyp" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Ortstyp.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.News" 
+      file="/TicketlineRCP/src/at/ticketline/entity/News.java" binary="false" navigable="false">      
+      <attribute name="ort"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Ort" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Ort.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Platz" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Platz.java" binary="false" navigable="false">      
+      <attribute name="auffuehrung"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Auffuehrung" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Auffuehrung.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Auffuehrung" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Auffuehrung.java" binary="false" navigable="false">      
+      <attribute name="veranstaltung"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Veranstaltung" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Veranstaltung.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization>    
+    <bendpoint x="717" y="1067"/>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Kunde" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Kunde.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Person" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Person.java" binary="false"/>  
+  </generalization>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.BestellPosition" 
+      file="/TicketlineRCP/src/at/ticketline/entity/BestellPosition.java" binary="false" navigable="false">      
+      <attribute name="artikel"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Artikel" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Artikel.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization>    
+    <bendpoint x="1480" y="1718"/>    
+    <bendpoint x="1480" y="1067"/>    
+    <bendpoint x="1499" y="176"/>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Bestellung" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Bestellung.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.BaseEntity" 
+      file="/TicketlineRCP/src/at/ticketline/entity/BaseEntity.java" binary="false"/>  
+  </generalization>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Reihe" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Reihe.java" binary="false" navigable="false">      
+      <attribute name="kategorie"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Kategorie" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Kategorie.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Bestellung" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Bestellung.java" binary="false" navigable="false">      
+      <attribute name="kunde"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Kunde" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Kunde.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Ort" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Ort.java" binary="false" navigable="false">      
+      <attribute name="kunden"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Kunde" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Kunde.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Kategorie" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Kategorie.java" binary="false" navigable="false">      
+      <attribute name="reihen"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Reihe" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Reihe.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Transaktion" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Transaktion.java" binary="false" navigable="false">      
+      <attribute name="zahlungsart"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Zahlungsart" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Zahlungsart.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization>    
+    <bendpoint x="2181" y="1067"/>    
+    <bendpoint x="2181" y="176"/>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Reihe" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Reihe.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.BaseEntity" 
+      file="/TicketlineRCP/src/at/ticketline/entity/BaseEntity.java" binary="false"/>  
+  </generalization>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Engagement" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Engagement.java" binary="false" navigable="false">      
+      <attribute name="veranstaltung"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Veranstaltung" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Veranstaltung.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <bendpoint x="1541" y="1718"/>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Saal" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Saal.java" binary="false" navigable="false">      
+      <attribute name="auffuehrungen"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Auffuehrung" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Auffuehrung.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization>    
+    <bendpoint x="1777" y="176"/>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Kategorie" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Kategorie.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.BaseEntity" 
+      file="/TicketlineRCP/src/at/ticketline/entity/BaseEntity.java" binary="false"/>  
+  </generalization>  
+  <generalization>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.BestellPosition" 
+      file="/TicketlineRCP/src/at/ticketline/entity/BestellPosition.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.BaseEntity" 
+      file="/TicketlineRCP/src/at/ticketline/entity/BaseEntity.java" binary="false"/>  
+  </generalization>  
+  <generalization>    
+    <bendpoint x="2202" y="1718"/>    
+    <bendpoint x="2202" y="1067"/>    
+    <bendpoint x="2202" y="176"/>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Saal" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Saal.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.BaseEntity" 
+      file="/TicketlineRCP/src/at/ticketline/entity/BaseEntity.java" binary="false"/>  
+  </generalization>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Auffuehrung" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Auffuehrung.java" binary="false" navigable="false">      
+      <attribute name="preis"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.PreisKategorie" 
+      file="/TicketlineRCP/src/at/ticketline/entity/PreisKategorie.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <bendpoint x="1396" y="1067"/>    
+    <bendpoint x="1417" y="1718"/>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.BestellPosition" 
+      file="/TicketlineRCP/src/at/ticketline/entity/BestellPosition.java" binary="false" navigable="false">      
+      <attribute name="bestellung"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Bestellung" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Bestellung.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <bendpoint x="1931" y="1067"/>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Platz" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Platz.java" binary="false" navigable="false">      
+      <attribute name="reihe"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Reihe" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Reihe.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization>    
+    <bendpoint x="31" y="1718"/>    
+    <bendpoint x="31" y="1067"/>    
+    <bendpoint x="31" y="176"/>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Transaktion" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Transaktion.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.BaseEntity" 
+      file="/TicketlineRCP/src/at/ticketline/entity/BaseEntity.java" binary="false"/>  
+  </generalization>  
+  <generalization>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Kuenstler" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Kuenstler.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.BaseEntity" 
+      file="/TicketlineRCP/src/at/ticketline/entity/BaseEntity.java" binary="false"/>  
+  </generalization>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Kuenstler" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Kuenstler.java" binary="false" navigable="false">      
+      <attribute name="geschlecht"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Geschlecht" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Geschlecht.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <bendpoint x="779" y="1718"/>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Saal" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Saal.java" binary="false" navigable="false">      
+      <attribute name="ort"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Ort" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Ort.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization>    
+    <bendpoint x="385" y="176"/>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Engagement" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Engagement.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.BaseEntity" 
+      file="/TicketlineRCP/src/at/ticketline/entity/BaseEntity.java" binary="false"/>  
+  </generalization>  
+  <generalization>    
+    <bendpoint x="696" y="1067"/>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Mitarbeiter" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Mitarbeiter.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Person" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Person.java" binary="false"/>  
+  </generalization>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Veranstaltung" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Veranstaltung.java" binary="false" navigable="false">      
+      <attribute name="auffuehrungen"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Auffuehrung" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Auffuehrung.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Mitarbeiter" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Mitarbeiter.java" binary="false" navigable="false">      
+      <attribute name="mtransaktionen"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Transaktion" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Transaktion.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Saal" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Saal.java" binary="false" navigable="false">      
+      <attribute name="reihen"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Reihe" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Reihe.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <bendpoint x="1520" y="1718"/>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Auffuehrung" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Auffuehrung.java" binary="false" navigable="false">      
+      <attribute name="saal"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Saal" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Saal.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Platz" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Platz.java" binary="false" navigable="false">      
+      <attribute name="kategorie"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Kategorie" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Kategorie.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Bestellung" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Bestellung.java" binary="false" navigable="false">      
+      <attribute name="zahlungsart"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Zahlungsart" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Zahlungsart.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <bendpoint x="1952" y="1067"/>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Reihe" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Reihe.java" binary="false" navigable="false">      
+      <attribute name="plaetze"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Platz" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Platz.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Ort" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Ort.java" binary="false" navigable="false">      
+      <attribute name="adresse"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Adresse" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Adresse.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Engagement" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Engagement.java" binary="false" navigable="false">      
+      <attribute name="kuenstler"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Kuenstler" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Kuenstler.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.entity.Transaktion" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Transaktion.java" binary="false" navigable="false">      
+      <attribute name="status"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.entity.Transaktionsstatus" 
+      file="/TicketlineRCP/src/at/ticketline/entity/Transaktionsstatus.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" package="true" initial-value="false" signature="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true"/>    
+    <operations public="true" package="true" protected="true" private="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

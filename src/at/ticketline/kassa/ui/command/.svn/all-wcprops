@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/282/trunk/TicketlineRCP/src/at/ticketline/kassa/ui/command
+END
+EditSitzplanCommandHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/91/trunk/TicketlineRCP/src/at/ticketline/kassa/ui/command/EditSitzplanCommandHandler.java
+END
+SearchVeranstaltungCommandHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/184/trunk/TicketlineRCP/src/at/ticketline/kassa/ui/command/SearchVeranstaltungCommandHandler.java
+END
+AuffuehrungenDirektCommandHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/91/trunk/TicketlineRCP/src/at/ticketline/kassa/ui/command/AuffuehrungenDirektCommandHandler.java
+END
+CreateKundeCommandHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/140/trunk/TicketlineRCP/src/at/ticketline/kassa/ui/command/CreateKundeCommandHandler.java
+END
+CreateKuenstlerCommandHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/91/trunk/TicketlineRCP/src/at/ticketline/kassa/ui/command/CreateKuenstlerCommandHandler.java
+END
+SearchOrtCommandHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/205/trunk/TicketlineRCP/src/at/ticketline/kassa/ui/command/SearchOrtCommandHandler.java
+END
+TopTenCommandHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/282/trunk/TicketlineRCP/src/at/ticketline/kassa/ui/command/TopTenCommandHandler.java
+END
+SellTicketsEditorCommandHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/91/trunk/TicketlineRCP/src/at/ticketline/kassa/ui/command/SellTicketsEditorCommandHandler.java
+END
+OpenShopCommandHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/273/trunk/TicketlineRCP/src/at/ticketline/kassa/ui/command/OpenShopCommandHandler.java
+END
+SearchKuenstlerCommandHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/91/trunk/TicketlineRCP/src/at/ticketline/kassa/ui/command/SearchKuenstlerCommandHandler.java
+END
+SearchKundeCommandHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/140/trunk/TicketlineRCP/src/at/ticketline/kassa/ui/command/SearchKundeCommandHandler.java
+END
+EditKundeCommandHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/140/trunk/TicketlineRCP/src/at/ticketline/kassa/ui/command/EditKundeCommandHandler.java
+END
+EditKuenstlerCommandHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/91/trunk/TicketlineRCP/src/at/ticketline/kassa/ui/command/EditKuenstlerCommandHandler.java
+END
+DeleteKundeCommandHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/140/trunk/TicketlineRCP/src/at/ticketline/kassa/ui/command/DeleteKundeCommandHandler.java
+END
+DeleteKuenstlerCommandHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/92/trunk/TicketlineRCP/src/at/ticketline/kassa/ui/command/DeleteKuenstlerCommandHandler.java
+END
+SearchAuffuehrungCommandHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/91/trunk/TicketlineRCP/src/at/ticketline/kassa/ui/command/SearchAuffuehrungCommandHandler.java
+END
+SellTicketsCommandHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/91/trunk/TicketlineRCP/src/at/ticketline/kassa/ui/command/SellTicketsCommandHandler.java
+END
+SearchTicketCommandHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/282/trunk/TicketlineRCP/src/at/ticketline/kassa/ui/command/SearchTicketCommandHandler.java
+END
+NewsCommandHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/249/trunk/TicketlineRCP/src/at/ticketline/kassa/ui/command/NewsCommandHandler.java
+END

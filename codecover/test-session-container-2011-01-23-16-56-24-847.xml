@@ -1,0 +1,809 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestSessionContainer xmlns="http://www.codecover.org/xml/testsession-container" Date="1295798184818" TestSessionContainerId="321de005-494a-4307-b305-2ca399d6501a" version="1.0">
+<SrcFileList>
+<SrcFile Content="package at.ticketline.test.integration;&#13;&#10;&#13;&#10;import static org.hamcrest.Matchers.greaterThan;&#13;&#10;import static org.hamcrest.Matchers.is;&#13;&#10;import static org.junit.Assert.assertEquals;&#13;&#10;import static org.junit.Assert.assertThat;&#13;&#10;&#13;&#10;import java.math.BigDecimal;&#13;&#10;import java.util.Calendar;&#13;&#10;import java.util.GregorianCalendar;&#13;&#10;import java.util.List;&#13;&#10;&#13;&#10;import org.dbunit.dataset.IDataSet;&#13;&#10;import org.dbunit.operation.DatabaseOperation;&#13;&#10;import org.junit.After;&#13;&#10;import org.junit.Before;&#13;&#10;import org.junit.BeforeClass;&#13;&#10;import org.junit.Test;&#13;&#10;&#13;&#10;import at.ticketline.dao.DaoFactory;&#13;&#10;import at.ticketline.dao.interfaces.ArtikelDao;&#13;&#10;import at.ticketline.dao.interfaces.BestellPositionDao;&#13;&#10;import at.ticketline.dao.interfaces.BestellungDao;&#13;&#10;import at.ticketline.entity.Artikel;&#13;&#10;import at.ticketline.entity.ArtikelKategorie;&#13;&#10;import at.ticketline.entity.BestellPosition;&#13;&#10;import at.ticketline.entity.Bestellung;&#13;&#10;import at.ticketline.entity.Zahlungsart;&#13;&#10;import at.ticketline.service.BestellungServiceImpl;&#13;&#10;import at.ticketline.test.AbstractTestCaseBase;&#13;&#10;&#13;&#10;public class BestellungServiceImplIntTest extends AbstractTestCaseBase {&#13;&#10;&#13;&#10;    private static BestellungDao bestellungDao = null;&#13;&#10;    private static BestellPositionDao bestellpositionDao = null;    &#13;&#10;    private static ArtikelDao artikelDao = null;    &#13;&#10;    private static BestellungServiceImpl bs;&#13;&#10;&#13;&#10;    @Override&#13;&#10;    public IDataSet getDataSet() {&#13;&#10;&#9;return getDataSet(&quot;BestellungServiceImplIntTest.xml&quot;);&#13;&#10;    }&#13;&#10;&#13;&#10;    @Override&#13;&#10;    public DatabaseOperation getSetUpOperation() {&#13;&#10;&#9;return DatabaseOperation.CLEAN_INSERT;&#13;&#10;    }&#13;&#10;&#13;&#10;    @Override&#13;&#10;    public DatabaseOperation getTearDownOperation() {&#13;&#10;&#9;return DatabaseOperation.NONE;&#13;&#10;    }&#13;&#10;&#13;&#10;    @BeforeClass&#13;&#10;    public static void setUp() {&#9;&#13;&#10;&#9;bs = new BestellungServiceImpl();&#13;&#10;&#9;bestellungDao = (BestellungDao) DaoFactory.findDaoByEntity(Bestellung.class);&#13;&#10;&#9;bestellpositionDao = (BestellPositionDao) DaoFactory.findDaoByEntity(BestellPosition.class);&#13;&#10;&#9;artikelDao = (ArtikelDao) DaoFactory.findDaoByEntity(Artikel.class);&#13;&#10;    }&#13;&#10;&#13;&#10;    @Before&#13;&#10;    public void before() throws Exception {&#13;&#10;&#9;this.onSetup();&#13;&#10;    }&#13;&#10;&#13;&#10;    @After&#13;&#10;    public void after() throws Exception {&#13;&#10;&#9;this.onTearDown();&#13;&#10;    }&#13;&#10;&#13;&#10;&#13;&#10;    @Test&#13;&#10;    public void findByBestellung() {&#13;&#10;&#9;Bestellung b = new Bestellung();&#13;&#10;&#9;b.setBezahlt(true);&#13;&#10;&#9;b.setVersandt(true);&#13;&#10;&#9;List&lt;Bestellung&gt; list = bs.findByBestellung(b);&#13;&#10;&#13;&#10;&#9;assertThat(list.size(), is(2));&#13;&#10;&#9;assertEquals(list.get(0).isVersandt(), true);&#13;&#10;&#9;assertEquals(list.get(1).getBestellzeitpunkt().toString(), &quot;Wed Oct 20 19:00:00 CEST 2010&quot;);&#13;&#10;&#13;&#10;    }&#13;&#10;&#13;&#10;    @Test&#13;&#10;    public void findAllBestellungen() {&#13;&#10;&#13;&#10;&#9;List&lt;Bestellung&gt; list = bestellungDao.findAll();&#13;&#10;&#13;&#10;&#9;assertThat(list.size(), is(3));&#13;&#10;&#9;assertEquals(list.get(0).isVersandt(), true);&#13;&#10;&#9;assertEquals(list.get(1).isBezahlt(), false);&#13;&#10;&#9;assertEquals(list.get(2).getBestellzeitpunkt().toString(), &quot;Wed Oct 20 19:00:00 CEST 2010&quot;);&#13;&#10;&#13;&#10;    }&#13;&#10;    &#13;&#10;    @Test&#13;&#10;    public void addBestellung() {&#13;&#10;&#13;&#10;&#9;Integer[] datumZeit = {2011, 1, 10, 0, 0};&#13;&#10;&#9;&#13;&#10;&#9;Calendar c = new GregorianCalendar();&#13;&#10;&#9;c.set(Calendar.YEAR, datumZeit[0]);&#13;&#10;&#9;c.set(Calendar.MONTH, datumZeit[1]);&#13;&#10;&#9;c.set(Calendar.DAY_OF_MONTH, datumZeit[2]);&#13;&#10;&#9;c.set(Calendar.HOUR_OF_DAY, datumZeit[3]);&#13;&#10;&#9;c.set(Calendar.MINUTE, datumZeit[4]);&#13;&#10;&#13;&#10;&#9;Bestellung b = new Bestellung();&#13;&#10;&#9;b.setBezahlt(true);&#13;&#10;&#9;b.setVersandt(false);&#13;&#10;&#9;b.setBestellzeitpunkt(c.getTime());&#13;&#10;&#9;b.setZahlungsart(Zahlungsart.VORKASSE);&#13;&#10;&#13;&#10;&#9;&#13;&#10;&#9;int i = bestellungDao.findAll().size();&#13;&#10;&#9;&#13;&#10;&#9;bs.addBestellung(b);&#13;&#10;&#9;&#9;&#9;&#13;&#10;&#9;List&lt;Bestellung&gt; list = bs.findAllBestellungen();&#13;&#10;&#13;&#10;&#9;assertThat(list.size(), greaterThan(i));&#13;&#10;&#13;&#10;    }&#13;&#10;    &#13;&#10;    @Test&#13;&#10;    public void addBestellposition() {&#13;&#10;&#13;&#10;&#9;Integer[] datumZeit = {2011, 1, 10, 0, 0};&#13;&#10;&#9;&#13;&#10;&#9;Calendar c = new GregorianCalendar();&#13;&#10;&#9;c.set(Calendar.YEAR, datumZeit[0]);&#13;&#10;&#9;c.set(Calendar.MONTH, datumZeit[1]);&#13;&#10;&#9;c.set(Calendar.DAY_OF_MONTH, datumZeit[2]);&#13;&#10;&#9;c.set(Calendar.HOUR_OF_DAY, datumZeit[3]);&#13;&#10;&#9;c.set(Calendar.MINUTE, datumZeit[4]);&#13;&#10;&#13;&#10;&#9;Bestellung b = new Bestellung();&#13;&#10;&#9;b.setBezahlt(true);&#13;&#10;&#9;b.setVersandt(false);&#13;&#10;&#9;b.setBestellzeitpunkt(c.getTime());&#13;&#10;&#9;b.setZahlungsart(Zahlungsart.VORKASSE);&#13;&#10;&#9;&#13;&#10;&#9;Bestellung dbBest = bs.addBestellung(b);&#13;&#10;&#9;&#13;&#10;&#9;Artikel a = new Artikel();&#13;&#10;&#9;a.setKurzbezeichnung(&quot;kurzbezeichnung1&quot;);&#13;&#10;&#9;a.setBeschreibung(&quot;beschreibung1&quot;);&#13;&#10;&#9;a.setPreis(new BigDecimal(String.valueOf(10)));&#13;&#10;&#9;a.setKategorie(ArtikelKategorie.Poster);&#13;&#10;&#9;&#13;&#10;&#9;artikelDao.persist(a);&#13;&#10;&#9;&#13;&#10;&#9;BestellPosition bp = new BestellPosition();&#13;&#10;&#9;bp.setArtikel(a);&#13;&#10;&#9;bp.setBestellung(dbBest);&#13;&#10;&#9;bp.setMenge(1);&#13;&#10;&#13;&#10;&#9;&#13;&#10;&#9;int i = bestellpositionDao.findAll().size();&#13;&#10;&#9;&#13;&#10;&#9;bs.addBestellposition(bp);&#13;&#10;&#9;&#9;&#9;&#13;&#10;&#9;List&lt;BestellPosition&gt; list = bestellpositionDao.findAll();&#13;&#10;&#13;&#10;&#9;assertThat(list.size(), greaterThan(i));&#13;&#10;&#13;&#10;    }&#13;&#10;&#13;&#10;  &#13;&#10;}&#13;&#10;" Filename="BestellungServiceImplIntTest.java" Intrnl_Id="1"/>
+</SrcFileList>
+<CritList>
+<CritListEntry Name="org.codecover.model.utils.criteria.LoopCoverage" PluginName="org.codecover"/>
+<CritListEntry Name="org.codecover.model.utils.criteria.BranchCoverage" PluginName="org.codecover"/>
+<CritListEntry Name="org.codecover.model.utils.criteria.ConditionCoverage" PluginName="org.codecover"/>
+<CritListEntry Name="org.codecover.model.utils.criteria.SynchronizedStatementCoverage" PluginName="org.codecover"/>
+<CritListEntry Name="org.codecover.model.utils.criteria.QMOCoverage" PluginName="org.codecover"/>
+<CritListEntry Name="org.codecover.model.utils.criteria.StatementCoverage" PluginName="org.codecover"/>
+</CritList>
+<BoolOpList/>
+<HierarchyLvlTypeList>
+<HierarchyLvlType EnglishName="package" IntrnlName="package" Intrnl_Id="2"/>
+<HierarchyLvlType EnglishName="class" IntrnlName="class" Intrnl_Id="3"/>
+<HierarchyLvlType EnglishName="method" IntrnlName="method" Intrnl_Id="4"/>
+<HierarchyLvlType EnglishName="default package" IntrnlName="default package" Intrnl_Id="5"/>
+</HierarchyLvlTypeList>
+<MASTRoot>
+<HierarchyLvl HierarchyLvlId="17" HierarchyLvlTypeId="5" Intrnl_Id="6" Name="default package">
+<Header/>
+<LocList/>
+<HierarchyLvl HierarchyLvlId="16" HierarchyLvlTypeId="2" Intrnl_Id="7" Name="at">
+<Header/>
+<LocList/>
+<HierarchyLvl HierarchyLvlId="15" HierarchyLvlTypeId="2" Intrnl_Id="8" Name="ticketline">
+<Header/>
+<LocList/>
+<HierarchyLvl HierarchyLvlId="14" HierarchyLvlTypeId="2" Intrnl_Id="9" Name="test">
+<Header/>
+<LocList/>
+<HierarchyLvl HierarchyLvlId="13" HierarchyLvlTypeId="2" Intrnl_Id="10" Name="integration">
+<Header/>
+<LocList/>
+<HierarchyLvl HierarchyLvlId="12" HierarchyLvlTypeId="3" Intrnl_Id="11" Name="BestellungServiceImplIntTest">
+<Header>
+<Loc EndOffset="1124" SrcFileId="1" StartOffset="1054"/>
+</Header>
+<LocList>
+<Loc EndOffset="4753" SrcFileId="1" StartOffset="1054"/>
+</LocList>
+<StmntSeq Intrnl_Id="12">
+<LocList>
+<Loc EndOffset="1184" SrcFileId="1" StartOffset="1134"/>
+<Loc EndOffset="1250" SrcFileId="1" StartOffset="1190"/>
+<Loc EndOffset="1304" SrcFileId="1" StartOffset="1260"/>
+</LocList>
+<BasicStmnt CovItemId="S1" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="13">
+<LocList>
+<Loc EndOffset="1184" SrcFileId="1" StartOffset="1134"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S2" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="14">
+<LocList>
+<Loc EndOffset="1250" SrcFileId="1" StartOffset="1190"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S3" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="15">
+<LocList>
+<Loc EndOffset="1304" SrcFileId="1" StartOffset="1260"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+<HierarchyLvl HierarchyLvlId="2" HierarchyLvlTypeId="4" Intrnl_Id="16" Name="getDataSet">
+<Header>
+<Loc EndOffset="1405" SrcFileId="1" StartOffset="1362"/>
+</Header>
+<LocList>
+<Loc EndOffset="1471" SrcFileId="1" StartOffset="1362"/>
+</LocList>
+<StmntSeq Intrnl_Id="17">
+<LocList>
+<Loc EndOffset="1464" SrcFileId="1" StartOffset="1410"/>
+</LocList>
+<BasicStmnt CovItemId="S4" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="18">
+<LocList>
+<Loc EndOffset="1464" SrcFileId="1" StartOffset="1410"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="3" HierarchyLvlTypeId="4" Intrnl_Id="19" Name="getSetUpOperation">
+<Header>
+<Loc EndOffset="1538" SrcFileId="1" StartOffset="1479"/>
+</Header>
+<LocList>
+<Loc EndOffset="1588" SrcFileId="1" StartOffset="1479"/>
+</LocList>
+<StmntSeq Intrnl_Id="20">
+<LocList>
+<Loc EndOffset="1581" SrcFileId="1" StartOffset="1543"/>
+</LocList>
+<BasicStmnt CovItemId="S5" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="21">
+<LocList>
+<Loc EndOffset="1581" SrcFileId="1" StartOffset="1543"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="4" HierarchyLvlTypeId="4" Intrnl_Id="22" Name="getTearDownOperation">
+<Header>
+<Loc EndOffset="1658" SrcFileId="1" StartOffset="1596"/>
+</Header>
+<LocList>
+<Loc EndOffset="1700" SrcFileId="1" StartOffset="1596"/>
+</LocList>
+<StmntSeq Intrnl_Id="23">
+<LocList>
+<Loc EndOffset="1693" SrcFileId="1" StartOffset="1663"/>
+</LocList>
+<BasicStmnt CovItemId="S6" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="24">
+<LocList>
+<Loc EndOffset="1693" SrcFileId="1" StartOffset="1663"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="5" HierarchyLvlTypeId="4" Intrnl_Id="25" Name="setUp">
+<Header>
+<Loc EndOffset="1752" SrcFileId="1" StartOffset="1708"/>
+</Header>
+<LocList>
+<Loc EndOffset="2044" SrcFileId="1" StartOffset="1708"/>
+</LocList>
+<StmntSeq Intrnl_Id="26">
+<LocList>
+<Loc EndOffset="1791" SrcFileId="1" StartOffset="1758"/>
+<Loc EndOffset="1871" SrcFileId="1" StartOffset="1794"/>
+<Loc EndOffset="1966" SrcFileId="1" StartOffset="1874"/>
+<Loc EndOffset="2037" SrcFileId="1" StartOffset="1969"/>
+</LocList>
+<BasicStmnt CovItemId="S7" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="27">
+<LocList>
+<Loc EndOffset="1791" SrcFileId="1" StartOffset="1758"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S8" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="28">
+<LocList>
+<Loc EndOffset="1871" SrcFileId="1" StartOffset="1794"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S9" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="29">
+<LocList>
+<Loc EndOffset="1966" SrcFileId="1" StartOffset="1874"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S10" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="30">
+<LocList>
+<Loc EndOffset="2037" SrcFileId="1" StartOffset="1969"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="6" HierarchyLvlTypeId="4" Intrnl_Id="31" Name="before">
+<Header>
+<Loc EndOffset="2102" SrcFileId="1" StartOffset="2052"/>
+</Header>
+<LocList>
+<Loc EndOffset="2129" SrcFileId="1" StartOffset="2052"/>
+</LocList>
+<StmntSeq Intrnl_Id="32">
+<LocList>
+<Loc EndOffset="2122" SrcFileId="1" StartOffset="2107"/>
+</LocList>
+<BasicStmnt CovItemId="S11" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="33">
+<LocList>
+<Loc EndOffset="2122" SrcFileId="1" StartOffset="2107"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="7" HierarchyLvlTypeId="4" Intrnl_Id="34" Name="after">
+<Header>
+<Loc EndOffset="2185" SrcFileId="1" StartOffset="2137"/>
+</Header>
+<LocList>
+<Loc EndOffset="2215" SrcFileId="1" StartOffset="2137"/>
+</LocList>
+<StmntSeq Intrnl_Id="35">
+<LocList>
+<Loc EndOffset="2208" SrcFileId="1" StartOffset="2190"/>
+</LocList>
+<BasicStmnt CovItemId="S12" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="36">
+<LocList>
+<Loc EndOffset="2208" SrcFileId="1" StartOffset="2190"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="8" HierarchyLvlTypeId="4" Intrnl_Id="37" Name="findByBestellung">
+<Header>
+<Loc EndOffset="2266" SrcFileId="1" StartOffset="2225"/>
+</Header>
+<LocList>
+<Loc EndOffset="2586" SrcFileId="1" StartOffset="2225"/>
+</LocList>
+<StmntSeq Intrnl_Id="38">
+<LocList>
+<Loc EndOffset="2303" SrcFileId="1" StartOffset="2271"/>
+<Loc EndOffset="2325" SrcFileId="1" StartOffset="2306"/>
+<Loc EndOffset="2348" SrcFileId="1" StartOffset="2328"/>
+<Loc EndOffset="2398" SrcFileId="1" StartOffset="2351"/>
+<Loc EndOffset="2434" SrcFileId="1" StartOffset="2403"/>
+<Loc EndOffset="2482" SrcFileId="1" StartOffset="2437"/>
+<Loc EndOffset="2577" SrcFileId="1" StartOffset="2485"/>
+</LocList>
+<BasicStmnt CovItemId="S13" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="39">
+<LocList>
+<Loc EndOffset="2303" SrcFileId="1" StartOffset="2271"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S14" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="40">
+<LocList>
+<Loc EndOffset="2325" SrcFileId="1" StartOffset="2306"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S15" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="41">
+<LocList>
+<Loc EndOffset="2348" SrcFileId="1" StartOffset="2328"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S16" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="42">
+<LocList>
+<Loc EndOffset="2398" SrcFileId="1" StartOffset="2351"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S17" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="43">
+<LocList>
+<Loc EndOffset="2434" SrcFileId="1" StartOffset="2403"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S18" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="44">
+<LocList>
+<Loc EndOffset="2482" SrcFileId="1" StartOffset="2437"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S19" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="45">
+<LocList>
+<Loc EndOffset="2577" SrcFileId="1" StartOffset="2485"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="9" HierarchyLvlTypeId="4" Intrnl_Id="46" Name="findAllBestellungen">
+<Header>
+<Loc EndOffset="2638" SrcFileId="1" StartOffset="2594"/>
+</Header>
+<LocList>
+<Loc EndOffset="2929" SrcFileId="1" StartOffset="2594"/>
+</LocList>
+<StmntSeq Intrnl_Id="47">
+<LocList>
+<Loc EndOffset="2693" SrcFileId="1" StartOffset="2645"/>
+<Loc EndOffset="2729" SrcFileId="1" StartOffset="2698"/>
+<Loc EndOffset="2777" SrcFileId="1" StartOffset="2732"/>
+<Loc EndOffset="2825" SrcFileId="1" StartOffset="2780"/>
+<Loc EndOffset="2920" SrcFileId="1" StartOffset="2828"/>
+</LocList>
+<BasicStmnt CovItemId="S20" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="48">
+<LocList>
+<Loc EndOffset="2693" SrcFileId="1" StartOffset="2645"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S21" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="49">
+<LocList>
+<Loc EndOffset="2729" SrcFileId="1" StartOffset="2698"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S22" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="50">
+<LocList>
+<Loc EndOffset="2777" SrcFileId="1" StartOffset="2732"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S23" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="51">
+<LocList>
+<Loc EndOffset="2825" SrcFileId="1" StartOffset="2780"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S24" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="52">
+<LocList>
+<Loc EndOffset="2920" SrcFileId="1" StartOffset="2828"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="10" HierarchyLvlTypeId="4" Intrnl_Id="53" Name="addBestellung">
+<Header>
+<Loc EndOffset="2979" SrcFileId="1" StartOffset="2941"/>
+</Header>
+<LocList>
+<Loc EndOffset="3626" SrcFileId="1" StartOffset="2941"/>
+</LocList>
+<StmntSeq Intrnl_Id="54">
+<LocList>
+<Loc EndOffset="3028" SrcFileId="1" StartOffset="2986"/>
+<Loc EndOffset="3071" SrcFileId="1" StartOffset="3034"/>
+<Loc EndOffset="3109" SrcFileId="1" StartOffset="3074"/>
+<Loc EndOffset="3148" SrcFileId="1" StartOffset="3112"/>
+<Loc EndOffset="3194" SrcFileId="1" StartOffset="3151"/>
+<Loc EndOffset="3239" SrcFileId="1" StartOffset="3197"/>
+<Loc EndOffset="3279" SrcFileId="1" StartOffset="3242"/>
+<Loc EndOffset="3316" SrcFileId="1" StartOffset="3284"/>
+<Loc EndOffset="3338" SrcFileId="1" StartOffset="3319"/>
+<Loc EndOffset="3362" SrcFileId="1" StartOffset="3341"/>
+<Loc EndOffset="3400" SrcFileId="1" StartOffset="3365"/>
+<Loc EndOffset="3442" SrcFileId="1" StartOffset="3403"/>
+<Loc EndOffset="3489" SrcFileId="1" StartOffset="3450"/>
+<Loc EndOffset="3515" SrcFileId="1" StartOffset="3495"/>
+<Loc EndOffset="3572" SrcFileId="1" StartOffset="3523"/>
+<Loc EndOffset="3617" SrcFileId="1" StartOffset="3577"/>
+</LocList>
+<BasicStmnt CovItemId="S25" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="55">
+<LocList>
+<Loc EndOffset="3028" SrcFileId="1" StartOffset="2986"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S26" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="56">
+<LocList>
+<Loc EndOffset="3071" SrcFileId="1" StartOffset="3034"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S27" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="57">
+<LocList>
+<Loc EndOffset="3109" SrcFileId="1" StartOffset="3074"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S28" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="58">
+<LocList>
+<Loc EndOffset="3148" SrcFileId="1" StartOffset="3112"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S29" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="59">
+<LocList>
+<Loc EndOffset="3194" SrcFileId="1" StartOffset="3151"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S30" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="60">
+<LocList>
+<Loc EndOffset="3239" SrcFileId="1" StartOffset="3197"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S31" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="61">
+<LocList>
+<Loc EndOffset="3279" SrcFileId="1" StartOffset="3242"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S32" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="62">
+<LocList>
+<Loc EndOffset="3316" SrcFileId="1" StartOffset="3284"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S33" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="63">
+<LocList>
+<Loc EndOffset="3338" SrcFileId="1" StartOffset="3319"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S34" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="64">
+<LocList>
+<Loc EndOffset="3362" SrcFileId="1" StartOffset="3341"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S35" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="65">
+<LocList>
+<Loc EndOffset="3400" SrcFileId="1" StartOffset="3365"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S36" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="66">
+<LocList>
+<Loc EndOffset="3442" SrcFileId="1" StartOffset="3403"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S37" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="67">
+<LocList>
+<Loc EndOffset="3489" SrcFileId="1" StartOffset="3450"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S38" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="68">
+<LocList>
+<Loc EndOffset="3515" SrcFileId="1" StartOffset="3495"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S39" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="69">
+<LocList>
+<Loc EndOffset="3572" SrcFileId="1" StartOffset="3523"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S40" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="70">
+<LocList>
+<Loc EndOffset="3617" SrcFileId="1" StartOffset="3577"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="11" HierarchyLvlTypeId="4" Intrnl_Id="71" Name="addBestellposition">
+<Header>
+<Loc EndOffset="3681" SrcFileId="1" StartOffset="3638"/>
+</Header>
+<LocList>
+<Loc EndOffset="4744" SrcFileId="1" StartOffset="3638"/>
+</LocList>
+<StmntSeq Intrnl_Id="72">
+<LocList>
+<Loc EndOffset="3730" SrcFileId="1" StartOffset="3688"/>
+<Loc EndOffset="3773" SrcFileId="1" StartOffset="3736"/>
+<Loc EndOffset="3811" SrcFileId="1" StartOffset="3776"/>
+<Loc EndOffset="3850" SrcFileId="1" StartOffset="3814"/>
+<Loc EndOffset="3896" SrcFileId="1" StartOffset="3853"/>
+<Loc EndOffset="3941" SrcFileId="1" StartOffset="3899"/>
+<Loc EndOffset="3981" SrcFileId="1" StartOffset="3944"/>
+<Loc EndOffset="4018" SrcFileId="1" StartOffset="3986"/>
+<Loc EndOffset="4040" SrcFileId="1" StartOffset="4021"/>
+<Loc EndOffset="4064" SrcFileId="1" StartOffset="4043"/>
+<Loc EndOffset="4102" SrcFileId="1" StartOffset="4067"/>
+<Loc EndOffset="4144" SrcFileId="1" StartOffset="4105"/>
+<Loc EndOffset="4190" SrcFileId="1" StartOffset="4150"/>
+<Loc EndOffset="4222" SrcFileId="1" StartOffset="4196"/>
+<Loc EndOffset="4266" SrcFileId="1" StartOffset="4225"/>
+<Loc EndOffset="4304" SrcFileId="1" StartOffset="4269"/>
+<Loc EndOffset="4354" SrcFileId="1" StartOffset="4307"/>
+<Loc EndOffset="4397" SrcFileId="1" StartOffset="4357"/>
+<Loc EndOffset="4425" SrcFileId="1" StartOffset="4403"/>
+<Loc EndOffset="4474" SrcFileId="1" StartOffset="4431"/>
+<Loc EndOffset="4494" SrcFileId="1" StartOffset="4477"/>
+<Loc EndOffset="4522" SrcFileId="1" StartOffset="4497"/>
+<Loc EndOffset="4540" SrcFileId="1" StartOffset="4525"/>
+<Loc EndOffset="4592" SrcFileId="1" StartOffset="4548"/>
+<Loc EndOffset="4624" SrcFileId="1" StartOffset="4598"/>
+<Loc EndOffset="4690" SrcFileId="1" StartOffset="4632"/>
+<Loc EndOffset="4735" SrcFileId="1" StartOffset="4695"/>
+</LocList>
+<BasicStmnt CovItemId="S41" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="73">
+<LocList>
+<Loc EndOffset="3730" SrcFileId="1" StartOffset="3688"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S42" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="74">
+<LocList>
+<Loc EndOffset="3773" SrcFileId="1" StartOffset="3736"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S43" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="75">
+<LocList>
+<Loc EndOffset="3811" SrcFileId="1" StartOffset="3776"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S44" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="76">
+<LocList>
+<Loc EndOffset="3850" SrcFileId="1" StartOffset="3814"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S45" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="77">
+<LocList>
+<Loc EndOffset="3896" SrcFileId="1" StartOffset="3853"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S46" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="78">
+<LocList>
+<Loc EndOffset="3941" SrcFileId="1" StartOffset="3899"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S47" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="79">
+<LocList>
+<Loc EndOffset="3981" SrcFileId="1" StartOffset="3944"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S48" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="80">
+<LocList>
+<Loc EndOffset="4018" SrcFileId="1" StartOffset="3986"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S49" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="81">
+<LocList>
+<Loc EndOffset="4040" SrcFileId="1" StartOffset="4021"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S50" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="82">
+<LocList>
+<Loc EndOffset="4064" SrcFileId="1" StartOffset="4043"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S51" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="83">
+<LocList>
+<Loc EndOffset="4102" SrcFileId="1" StartOffset="4067"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S52" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="84">
+<LocList>
+<Loc EndOffset="4144" SrcFileId="1" StartOffset="4105"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S53" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="85">
+<LocList>
+<Loc EndOffset="4190" SrcFileId="1" StartOffset="4150"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S54" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="86">
+<LocList>
+<Loc EndOffset="4222" SrcFileId="1" StartOffset="4196"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S55" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="87">
+<LocList>
+<Loc EndOffset="4266" SrcFileId="1" StartOffset="4225"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S56" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="88">
+<LocList>
+<Loc EndOffset="4304" SrcFileId="1" StartOffset="4269"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S57" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="89">
+<LocList>
+<Loc EndOffset="4354" SrcFileId="1" StartOffset="4307"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S58" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="90">
+<LocList>
+<Loc EndOffset="4397" SrcFileId="1" StartOffset="4357"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S59" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="91">
+<LocList>
+<Loc EndOffset="4425" SrcFileId="1" StartOffset="4403"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S60" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="92">
+<LocList>
+<Loc EndOffset="4474" SrcFileId="1" StartOffset="4431"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S61" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="93">
+<LocList>
+<Loc EndOffset="4494" SrcFileId="1" StartOffset="4477"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S62" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="94">
+<LocList>
+<Loc EndOffset="4522" SrcFileId="1" StartOffset="4497"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S63" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="95">
+<LocList>
+<Loc EndOffset="4540" SrcFileId="1" StartOffset="4525"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S64" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="96">
+<LocList>
+<Loc EndOffset="4592" SrcFileId="1" StartOffset="4548"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S65" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="97">
+<LocList>
+<Loc EndOffset="4624" SrcFileId="1" StartOffset="4598"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S66" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="98">
+<LocList>
+<Loc EndOffset="4690" SrcFileId="1" StartOffset="4632"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S67" CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java" Intrnl_Id="99">
+<LocList>
+<Loc EndOffset="4735" SrcFileId="1" StartOffset="4695"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+</HierarchyLvl>
+</HierarchyLvl>
+</HierarchyLvl>
+</HierarchyLvl>
+</HierarchyLvl>
+</HierarchyLvl>
+</MASTRoot>
+<TestSession Comment="" Date="1295798208833" Name="23.01.2011 16:56:48">
+<TestCase Comment="Error&#10;java.sql.SQLException: Integrity constraint violation FK_BESTELLPOSITION_BESTELLUNG_ID table: BESTELLPOSITION&#13;&#10;&#9;at org.hsqldb.jdbc.Util.sqlException(Unknown Source)&#13;&#10;&#9;at org.hsqldb.jdbc.jdbcStatement.fetchResult(Unknown Source)&#13;&#10;&#9;at org.hsqldb.jdbc.jdbcStatement.execute(Unknown Source)&#13;&#10;&#9;at org.dbunit.database.statement.SimpleStatement.executeBatch(SimpleStatement.java:69)&#13;&#10;&#9;at org.dbunit.operation.DeleteAllOperation.execute(DeleteAllOperation.java:126)&#13;&#10;&#9;at org.dbunit.operation.CompositeOperation.execute(CompositeOperation.java:79)&#13;&#10;&#9;at org.dbunit.AbstractDatabaseTester.executeOperation(AbstractDatabaseTester.java:190)&#13;&#10;&#9;at org.dbunit.AbstractDatabaseTester.onSetup(AbstractDatabaseTester.java:103)&#13;&#10;&#9;at at.ticketline.test.integration.BestellungServiceImplIntTest.before(BestellungServiceImplIntTest.java:79)&#13;&#10;&#9;at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;&#10;&#9;at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)&#13;&#10;&#9;at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)&#13;&#10;&#9;at java.lang.reflect.Method.invoke(Unknown Source)&#13;&#10;&#9;at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)&#13;&#10;&#9;at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)&#13;&#10;&#9;at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)&#13;&#10;&#9;at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:27)&#13;&#10;&#9;at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:31)&#13;&#10;&#9;at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:76)&#13;&#10;&#9;at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)&#13;&#10;&#9;at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)&#13;&#10;&#9;at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)&#13;&#10;&#9;at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)&#13;&#10;&#9;at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)&#13;&#10;&#9;at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)&#13;&#10;&#9;at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)&#13;&#10;&#9;at org.junit.runners.ParentRunner.run(ParentRunner.java:236)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:49)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)&#13;&#10;&#9;at org.codecover.juniteclipse.runner.EclipseTestRunner.main(EclipseTestRunner.java:40)" Date="1295798201686" Name="at.ticketline.test.integration.BestellungServiceImplIntTest:findByBestellung">
+<CovList>
+<CovPrefix CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java">
+<Cov CovItemId="S11" Value="1"/>
+<Cov CovItemId="S12" Value="1"/>
+<Cov CovItemId="S4" Value="1"/>
+<Cov CovItemId="S5" Value="1"/>
+<Cov CovItemId="S6" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList/>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<TestCase Comment="Error&#10;java.sql.SQLException: Integrity constraint violation FK_BESTELLPOSITION_BESTELLUNG_ID table: BESTELLPOSITION&#13;&#10;&#9;at org.hsqldb.jdbc.Util.sqlException(Unknown Source)&#13;&#10;&#9;at org.hsqldb.jdbc.jdbcStatement.fetchResult(Unknown Source)&#13;&#10;&#9;at org.hsqldb.jdbc.jdbcStatement.execute(Unknown Source)&#13;&#10;&#9;at org.dbunit.database.statement.SimpleStatement.executeBatch(SimpleStatement.java:69)&#13;&#10;&#9;at org.dbunit.operation.DeleteAllOperation.execute(DeleteAllOperation.java:126)&#13;&#10;&#9;at org.dbunit.operation.CompositeOperation.execute(CompositeOperation.java:79)&#13;&#10;&#9;at org.dbunit.AbstractDatabaseTester.executeOperation(AbstractDatabaseTester.java:190)&#13;&#10;&#9;at org.dbunit.AbstractDatabaseTester.onSetup(AbstractDatabaseTester.java:103)&#13;&#10;&#9;at at.ticketline.test.integration.BestellungServiceImplIntTest.before(BestellungServiceImplIntTest.java:79)&#13;&#10;&#9;at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;&#10;&#9;at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)&#13;&#10;&#9;at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)&#13;&#10;&#9;at java.lang.reflect.Method.invoke(Unknown Source)&#13;&#10;&#9;at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)&#13;&#10;&#9;at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)&#13;&#10;&#9;at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)&#13;&#10;&#9;at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:27)&#13;&#10;&#9;at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:31)&#13;&#10;&#9;at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:76)&#13;&#10;&#9;at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)&#13;&#10;&#9;at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)&#13;&#10;&#9;at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)&#13;&#10;&#9;at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)&#13;&#10;&#9;at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)&#13;&#10;&#9;at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)&#13;&#10;&#9;at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)&#13;&#10;&#9;at org.junit.runners.ParentRunner.run(ParentRunner.java:236)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:49)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)&#13;&#10;&#9;at org.codecover.juniteclipse.runner.EclipseTestRunner.main(EclipseTestRunner.java:40)" Date="1295798207469" Name="at.ticketline.test.integration.BestellungServiceImplIntTest:findAllBestellungen">
+<CovList>
+<CovPrefix CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java">
+<Cov CovItemId="S11" Value="1"/>
+<Cov CovItemId="S12" Value="1"/>
+<Cov CovItemId="S4" Value="1"/>
+<Cov CovItemId="S5" Value="1"/>
+<Cov CovItemId="S6" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList/>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<TestCase Comment="Error&#10;java.sql.SQLException: Integrity constraint violation FK_BESTELLPOSITION_BESTELLUNG_ID table: BESTELLPOSITION&#13;&#10;&#9;at org.hsqldb.jdbc.Util.sqlException(Unknown Source)&#13;&#10;&#9;at org.hsqldb.jdbc.jdbcStatement.fetchResult(Unknown Source)&#13;&#10;&#9;at org.hsqldb.jdbc.jdbcStatement.execute(Unknown Source)&#13;&#10;&#9;at org.dbunit.database.statement.SimpleStatement.executeBatch(SimpleStatement.java:69)&#13;&#10;&#9;at org.dbunit.operation.DeleteAllOperation.execute(DeleteAllOperation.java:126)&#13;&#10;&#9;at org.dbunit.operation.CompositeOperation.execute(CompositeOperation.java:79)&#13;&#10;&#9;at org.dbunit.AbstractDatabaseTester.executeOperation(AbstractDatabaseTester.java:190)&#13;&#10;&#9;at org.dbunit.AbstractDatabaseTester.onSetup(AbstractDatabaseTester.java:103)&#13;&#10;&#9;at at.ticketline.test.integration.BestellungServiceImplIntTest.before(BestellungServiceImplIntTest.java:79)&#13;&#10;&#9;at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;&#10;&#9;at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)&#13;&#10;&#9;at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)&#13;&#10;&#9;at java.lang.reflect.Method.invoke(Unknown Source)&#13;&#10;&#9;at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)&#13;&#10;&#9;at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)&#13;&#10;&#9;at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)&#13;&#10;&#9;at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:27)&#13;&#10;&#9;at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:31)&#13;&#10;&#9;at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:76)&#13;&#10;&#9;at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)&#13;&#10;&#9;at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)&#13;&#10;&#9;at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)&#13;&#10;&#9;at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)&#13;&#10;&#9;at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)&#13;&#10;&#9;at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)&#13;&#10;&#9;at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)&#13;&#10;&#9;at org.junit.runners.ParentRunner.run(ParentRunner.java:236)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:49)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)&#13;&#10;&#9;at org.codecover.juniteclipse.runner.EclipseTestRunner.main(EclipseTestRunner.java:40)" Date="1295798208154" Name="at.ticketline.test.integration.BestellungServiceImplIntTest:addBestellung">
+<CovList>
+<CovPrefix CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java">
+<Cov CovItemId="S11" Value="1"/>
+<Cov CovItemId="S12" Value="1"/>
+<Cov CovItemId="S4" Value="1"/>
+<Cov CovItemId="S5" Value="1"/>
+<Cov CovItemId="S6" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList/>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<TestCase Comment="Error&#10;java.sql.SQLException: Integrity constraint violation FK_BESTELLPOSITION_BESTELLUNG_ID table: BESTELLPOSITION&#13;&#10;&#9;at org.hsqldb.jdbc.Util.sqlException(Unknown Source)&#13;&#10;&#9;at org.hsqldb.jdbc.jdbcStatement.fetchResult(Unknown Source)&#13;&#10;&#9;at org.hsqldb.jdbc.jdbcStatement.execute(Unknown Source)&#13;&#10;&#9;at org.dbunit.database.statement.SimpleStatement.executeBatch(SimpleStatement.java:69)&#13;&#10;&#9;at org.dbunit.operation.DeleteAllOperation.execute(DeleteAllOperation.java:126)&#13;&#10;&#9;at org.dbunit.operation.CompositeOperation.execute(CompositeOperation.java:79)&#13;&#10;&#9;at org.dbunit.AbstractDatabaseTester.executeOperation(AbstractDatabaseTester.java:190)&#13;&#10;&#9;at org.dbunit.AbstractDatabaseTester.onSetup(AbstractDatabaseTester.java:103)&#13;&#10;&#9;at at.ticketline.test.integration.BestellungServiceImplIntTest.before(BestellungServiceImplIntTest.java:79)&#13;&#10;&#9;at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;&#10;&#9;at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)&#13;&#10;&#9;at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)&#13;&#10;&#9;at java.lang.reflect.Method.invoke(Unknown Source)&#13;&#10;&#9;at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)&#13;&#10;&#9;at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)&#13;&#10;&#9;at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)&#13;&#10;&#9;at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:27)&#13;&#10;&#9;at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:31)&#13;&#10;&#9;at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:76)&#13;&#10;&#9;at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)&#13;&#10;&#9;at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)&#13;&#10;&#9;at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)&#13;&#10;&#9;at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)&#13;&#10;&#9;at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)&#13;&#10;&#9;at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)&#13;&#10;&#9;at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)&#13;&#10;&#9;at org.junit.runners.ParentRunner.run(ParentRunner.java:236)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:49)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)&#13;&#10;&#9;at org.codecover.juniteclipse.runner.EclipseTestRunner.main(EclipseTestRunner.java:40)" Date="1295798208292" Name="at.ticketline.test.integration.BestellungServiceImplIntTest:addBestellposition">
+<CovList>
+<CovPrefix CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java">
+<Cov CovItemId="S11" Value="1"/>
+<Cov CovItemId="S12" Value="1"/>
+<Cov CovItemId="S4" Value="1"/>
+<Cov CovItemId="S5" Value="1"/>
+<Cov CovItemId="S6" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList/>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<MetaDataList/>
+</TestSession>
+<TestSession Comment="" Date="1295798230287" Name="23.01.2011 16:57:10">
+<TestCase Comment="Error&#10;java.sql.SQLException: Integrity constraint violation FK_BESTELLPOSITION_BESTELLUNG_ID table: BESTELLPOSITION&#13;&#10;&#9;at org.hsqldb.jdbc.Util.sqlException(Unknown Source)&#13;&#10;&#9;at org.hsqldb.jdbc.jdbcStatement.fetchResult(Unknown Source)&#13;&#10;&#9;at org.hsqldb.jdbc.jdbcStatement.execute(Unknown Source)&#13;&#10;&#9;at org.dbunit.database.statement.SimpleStatement.executeBatch(SimpleStatement.java:69)&#13;&#10;&#9;at org.dbunit.operation.DeleteAllOperation.execute(DeleteAllOperation.java:126)&#13;&#10;&#9;at org.dbunit.operation.CompositeOperation.execute(CompositeOperation.java:79)&#13;&#10;&#9;at org.dbunit.AbstractDatabaseTester.executeOperation(AbstractDatabaseTester.java:190)&#13;&#10;&#9;at org.dbunit.AbstractDatabaseTester.onSetup(AbstractDatabaseTester.java:103)&#13;&#10;&#9;at at.ticketline.test.integration.BestellungServiceImplIntTest.before(BestellungServiceImplIntTest.java:79)&#13;&#10;&#9;at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;&#10;&#9;at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)&#13;&#10;&#9;at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)&#13;&#10;&#9;at java.lang.reflect.Method.invoke(Unknown Source)&#13;&#10;&#9;at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)&#13;&#10;&#9;at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)&#13;&#10;&#9;at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)&#13;&#10;&#9;at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:27)&#13;&#10;&#9;at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:31)&#13;&#10;&#9;at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:76)&#13;&#10;&#9;at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)&#13;&#10;&#9;at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)&#13;&#10;&#9;at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)&#13;&#10;&#9;at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)&#13;&#10;&#9;at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)&#13;&#10;&#9;at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)&#13;&#10;&#9;at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)&#13;&#10;&#9;at org.junit.runners.ParentRunner.run(ParentRunner.java:236)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:49)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)&#13;&#10;&#9;at org.codecover.juniteclipse.runner.EclipseTestRunner.main(EclipseTestRunner.java:40)" Date="1295798224211" Name="at.ticketline.test.integration.BestellungServiceImplIntTest:findByBestellung">
+<CovList>
+<CovPrefix CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java">
+<Cov CovItemId="S11" Value="1"/>
+<Cov CovItemId="S12" Value="1"/>
+<Cov CovItemId="S4" Value="1"/>
+<Cov CovItemId="S5" Value="1"/>
+<Cov CovItemId="S6" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList/>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<TestCase Comment="Error&#10;java.sql.SQLException: Integrity constraint violation FK_BESTELLPOSITION_BESTELLUNG_ID table: BESTELLPOSITION&#13;&#10;&#9;at org.hsqldb.jdbc.Util.sqlException(Unknown Source)&#13;&#10;&#9;at org.hsqldb.jdbc.jdbcStatement.fetchResult(Unknown Source)&#13;&#10;&#9;at org.hsqldb.jdbc.jdbcStatement.execute(Unknown Source)&#13;&#10;&#9;at org.dbunit.database.statement.SimpleStatement.executeBatch(SimpleStatement.java:69)&#13;&#10;&#9;at org.dbunit.operation.DeleteAllOperation.execute(DeleteAllOperation.java:126)&#13;&#10;&#9;at org.dbunit.operation.CompositeOperation.execute(CompositeOperation.java:79)&#13;&#10;&#9;at org.dbunit.AbstractDatabaseTester.executeOperation(AbstractDatabaseTester.java:190)&#13;&#10;&#9;at org.dbunit.AbstractDatabaseTester.onSetup(AbstractDatabaseTester.java:103)&#13;&#10;&#9;at at.ticketline.test.integration.BestellungServiceImplIntTest.before(BestellungServiceImplIntTest.java:79)&#13;&#10;&#9;at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;&#10;&#9;at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)&#13;&#10;&#9;at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)&#13;&#10;&#9;at java.lang.reflect.Method.invoke(Unknown Source)&#13;&#10;&#9;at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)&#13;&#10;&#9;at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)&#13;&#10;&#9;at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)&#13;&#10;&#9;at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:27)&#13;&#10;&#9;at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:31)&#13;&#10;&#9;at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:76)&#13;&#10;&#9;at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)&#13;&#10;&#9;at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)&#13;&#10;&#9;at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)&#13;&#10;&#9;at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)&#13;&#10;&#9;at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)&#13;&#10;&#9;at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)&#13;&#10;&#9;at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)&#13;&#10;&#9;at org.junit.runners.ParentRunner.run(ParentRunner.java:236)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:49)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)&#13;&#10;&#9;at org.codecover.juniteclipse.runner.EclipseTestRunner.main(EclipseTestRunner.java:40)" Date="1295798229696" Name="at.ticketline.test.integration.BestellungServiceImplIntTest:findAllBestellungen">
+<CovList>
+<CovPrefix CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java">
+<Cov CovItemId="S11" Value="1"/>
+<Cov CovItemId="S12" Value="1"/>
+<Cov CovItemId="S4" Value="1"/>
+<Cov CovItemId="S5" Value="1"/>
+<Cov CovItemId="S6" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList/>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<TestCase Comment="Error&#10;java.sql.SQLException: Integrity constraint violation FK_BESTELLPOSITION_BESTELLUNG_ID table: BESTELLPOSITION&#13;&#10;&#9;at org.hsqldb.jdbc.Util.sqlException(Unknown Source)&#13;&#10;&#9;at org.hsqldb.jdbc.jdbcStatement.fetchResult(Unknown Source)&#13;&#10;&#9;at org.hsqldb.jdbc.jdbcStatement.execute(Unknown Source)&#13;&#10;&#9;at org.dbunit.database.statement.SimpleStatement.executeBatch(SimpleStatement.java:69)&#13;&#10;&#9;at org.dbunit.operation.DeleteAllOperation.execute(DeleteAllOperation.java:126)&#13;&#10;&#9;at org.dbunit.operation.CompositeOperation.execute(CompositeOperation.java:79)&#13;&#10;&#9;at org.dbunit.AbstractDatabaseTester.executeOperation(AbstractDatabaseTester.java:190)&#13;&#10;&#9;at org.dbunit.AbstractDatabaseTester.onSetup(AbstractDatabaseTester.java:103)&#13;&#10;&#9;at at.ticketline.test.integration.BestellungServiceImplIntTest.before(BestellungServiceImplIntTest.java:79)&#13;&#10;&#9;at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;&#10;&#9;at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)&#13;&#10;&#9;at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)&#13;&#10;&#9;at java.lang.reflect.Method.invoke(Unknown Source)&#13;&#10;&#9;at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)&#13;&#10;&#9;at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)&#13;&#10;&#9;at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)&#13;&#10;&#9;at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:27)&#13;&#10;&#9;at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:31)&#13;&#10;&#9;at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:76)&#13;&#10;&#9;at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)&#13;&#10;&#9;at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)&#13;&#10;&#9;at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)&#13;&#10;&#9;at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)&#13;&#10;&#9;at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)&#13;&#10;&#9;at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)&#13;&#10;&#9;at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)&#13;&#10;&#9;at org.junit.runners.ParentRunner.run(ParentRunner.java:236)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:49)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)&#13;&#10;&#9;at org.codecover.juniteclipse.runner.EclipseTestRunner.main(EclipseTestRunner.java:40)" Date="1295798229838" Name="at.ticketline.test.integration.BestellungServiceImplIntTest:addBestellung">
+<CovList>
+<CovPrefix CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java">
+<Cov CovItemId="S11" Value="1"/>
+<Cov CovItemId="S12" Value="1"/>
+<Cov CovItemId="S4" Value="1"/>
+<Cov CovItemId="S5" Value="1"/>
+<Cov CovItemId="S6" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList/>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<TestCase Comment="Error&#10;java.sql.SQLException: Integrity constraint violation FK_BESTELLPOSITION_BESTELLUNG_ID table: BESTELLPOSITION&#13;&#10;&#9;at org.hsqldb.jdbc.Util.sqlException(Unknown Source)&#13;&#10;&#9;at org.hsqldb.jdbc.jdbcStatement.fetchResult(Unknown Source)&#13;&#10;&#9;at org.hsqldb.jdbc.jdbcStatement.execute(Unknown Source)&#13;&#10;&#9;at org.dbunit.database.statement.SimpleStatement.executeBatch(SimpleStatement.java:69)&#13;&#10;&#9;at org.dbunit.operation.DeleteAllOperation.execute(DeleteAllOperation.java:126)&#13;&#10;&#9;at org.dbunit.operation.CompositeOperation.execute(CompositeOperation.java:79)&#13;&#10;&#9;at org.dbunit.AbstractDatabaseTester.executeOperation(AbstractDatabaseTester.java:190)&#13;&#10;&#9;at org.dbunit.AbstractDatabaseTester.onSetup(AbstractDatabaseTester.java:103)&#13;&#10;&#9;at at.ticketline.test.integration.BestellungServiceImplIntTest.before(BestellungServiceImplIntTest.java:79)&#13;&#10;&#9;at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;&#10;&#9;at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)&#13;&#10;&#9;at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)&#13;&#10;&#9;at java.lang.reflect.Method.invoke(Unknown Source)&#13;&#10;&#9;at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)&#13;&#10;&#9;at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)&#13;&#10;&#9;at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)&#13;&#10;&#9;at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:27)&#13;&#10;&#9;at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:31)&#13;&#10;&#9;at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:76)&#13;&#10;&#9;at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)&#13;&#10;&#9;at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)&#13;&#10;&#9;at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)&#13;&#10;&#9;at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)&#13;&#10;&#9;at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)&#13;&#10;&#9;at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)&#13;&#10;&#9;at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)&#13;&#10;&#9;at org.junit.runners.ParentRunner.run(ParentRunner.java:236)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:49)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)&#13;&#10;&#9;at org.codecover.juniteclipse.runner.EclipseTestRunner.main(EclipseTestRunner.java:40)" Date="1295798229987" Name="at.ticketline.test.integration.BestellungServiceImplIntTest:addBestellposition">
+<CovList>
+<CovPrefix CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java">
+<Cov CovItemId="S11" Value="1"/>
+<Cov CovItemId="S12" Value="1"/>
+<Cov CovItemId="S4" Value="1"/>
+<Cov CovItemId="S5" Value="1"/>
+<Cov CovItemId="S6" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList/>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<MetaDataList/>
+</TestSession>
+<TestSession Comment="" Date="1295798927973" Name="23.01.2011 17:08:47">
+<TestCase Comment="" Date="1295798917290" Name="at.ticketline.test.integration.BestellungServiceImplIntTest:findByBestellung">
+<CovList>
+<CovPrefix CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java">
+<Cov CovItemId="S11" Value="1"/>
+<Cov CovItemId="S12" Value="1"/>
+<Cov CovItemId="S13" Value="1"/>
+<Cov CovItemId="S14" Value="1"/>
+<Cov CovItemId="S15" Value="1"/>
+<Cov CovItemId="S16" Value="1"/>
+<Cov CovItemId="S17" Value="1"/>
+<Cov CovItemId="S18" Value="1"/>
+<Cov CovItemId="S19" Value="1"/>
+<Cov CovItemId="S4" Value="1"/>
+<Cov CovItemId="S5" Value="1"/>
+<Cov CovItemId="S6" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList/>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<TestCase Comment="" Date="1295798925648" Name="at.ticketline.test.integration.BestellungServiceImplIntTest:findAllBestellungen">
+<CovList>
+<CovPrefix CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java">
+<Cov CovItemId="S11" Value="1"/>
+<Cov CovItemId="S12" Value="1"/>
+<Cov CovItemId="S20" Value="1"/>
+<Cov CovItemId="S21" Value="1"/>
+<Cov CovItemId="S22" Value="1"/>
+<Cov CovItemId="S23" Value="1"/>
+<Cov CovItemId="S24" Value="1"/>
+<Cov CovItemId="S4" Value="1"/>
+<Cov CovItemId="S5" Value="1"/>
+<Cov CovItemId="S6" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList/>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<TestCase Comment="" Date="1295798926636" Name="at.ticketline.test.integration.BestellungServiceImplIntTest:addBestellung">
+<CovList>
+<CovPrefix CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java">
+<Cov CovItemId="S11" Value="1"/>
+<Cov CovItemId="S12" Value="1"/>
+<Cov CovItemId="S25" Value="1"/>
+<Cov CovItemId="S26" Value="1"/>
+<Cov CovItemId="S27" Value="1"/>
+<Cov CovItemId="S28" Value="1"/>
+<Cov CovItemId="S29" Value="1"/>
+<Cov CovItemId="S30" Value="1"/>
+<Cov CovItemId="S31" Value="1"/>
+<Cov CovItemId="S32" Value="1"/>
+<Cov CovItemId="S33" Value="1"/>
+<Cov CovItemId="S34" Value="1"/>
+<Cov CovItemId="S35" Value="1"/>
+<Cov CovItemId="S36" Value="1"/>
+<Cov CovItemId="S37" Value="1"/>
+<Cov CovItemId="S38" Value="1"/>
+<Cov CovItemId="S39" Value="1"/>
+<Cov CovItemId="S4" Value="1"/>
+<Cov CovItemId="S40" Value="1"/>
+<Cov CovItemId="S5" Value="1"/>
+<Cov CovItemId="S6" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList/>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<TestCase Comment="" Date="1295798927367" Name="at.ticketline.test.integration.BestellungServiceImplIntTest:addBestellposition">
+<CovList>
+<CovPrefix CovItemPrefix="at.ticketline.test.integration.BestellungServiceImplIntTest.java">
+<Cov CovItemId="S11" Value="1"/>
+<Cov CovItemId="S12" Value="1"/>
+<Cov CovItemId="S4" Value="1"/>
+<Cov CovItemId="S41" Value="1"/>
+<Cov CovItemId="S42" Value="1"/>
+<Cov CovItemId="S43" Value="1"/>
+<Cov CovItemId="S44" Value="1"/>
+<Cov CovItemId="S45" Value="1"/>
+<Cov CovItemId="S46" Value="1"/>
+<Cov CovItemId="S47" Value="1"/>
+<Cov CovItemId="S48" Value="1"/>
+<Cov CovItemId="S49" Value="1"/>
+<Cov CovItemId="S5" Value="1"/>
+<Cov CovItemId="S50" Value="1"/>
+<Cov CovItemId="S51" Value="1"/>
+<Cov CovItemId="S52" Value="1"/>
+<Cov CovItemId="S53" Value="1"/>
+<Cov CovItemId="S54" Value="1"/>
+<Cov CovItemId="S55" Value="1"/>
+<Cov CovItemId="S56" Value="1"/>
+<Cov CovItemId="S57" Value="1"/>
+<Cov CovItemId="S58" Value="1"/>
+<Cov CovItemId="S59" Value="1"/>
+<Cov CovItemId="S6" Value="1"/>
+<Cov CovItemId="S60" Value="1"/>
+<Cov CovItemId="S61" Value="1"/>
+<Cov CovItemId="S62" Value="1"/>
+<Cov CovItemId="S63" Value="1"/>
+<Cov CovItemId="S64" Value="1"/>
+<Cov CovItemId="S65" Value="1"/>
+<Cov CovItemId="S66" Value="1"/>
+<Cov CovItemId="S67" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList/>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<MetaDataList/>
+</TestSession>
+</TestSessionContainer>

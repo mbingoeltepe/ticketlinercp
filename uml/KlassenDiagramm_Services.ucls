@@ -1,0 +1,125 @@
+<class-diagram version="0.9.86" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true">  
+  <interface corner="BOTTOM_RIGHT" language="java" name="at.ticketline.service.interfaces.TransaktionService" 
+    project="TicketlineRCP" file="/TicketlineRCP/src/at/ticketline/service/interfaces/TransaktionService.java" 
+    binary="false">    
+    <position x="259" y="320" width="388" height="163"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <interface corner="BOTTOM_RIGHT" language="java" name="at.ticketline.service.interfaces.KundeService" 
+    project="TicketlineRCP" file="/TicketlineRCP/src/at/ticketline/service/interfaces/KundeService.java" binary="false">    
+    <position x="776" y="320" width="200" height="99"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <interface corner="BOTTOM_RIGHT" language="java" name="at.ticketline.service.interfaces.MitarbeiterService" 
+    project="TicketlineRCP" file="/TicketlineRCP/src/at/ticketline/service/interfaces/MitarbeiterService.java" 
+    binary="false">    
+    <position x="1417" y="320" width="196" height="115"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <interface corner="BOTTOM_RIGHT" language="java" name="at.ticketline.service.interfaces.AuffuehrungService" 
+    project="TicketlineRCP" file="/TicketlineRCP/src/at/ticketline/service/interfaces/AuffuehrungService.java" 
+    binary="false">    
+    <position x="1016" y="320" width="282" height="99"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.service.ValidateException" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/service/ValidateException.java" binary="false">    
+    <position x="41" y="37" width="178" height="99"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.service.TransaktionServiceImpl" 
+    project="TicketlineRCP" file="/TicketlineRCP/src/at/ticketline/service/TransaktionServiceImpl.java" binary="false">    
+    <position x="259" y="37" width="477" height="243"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.service.KundeServiceImpl" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/service/KundeServiceImpl.java" binary="false">    
+    <position x="776" y="37" width="200" height="115"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.service.AuffuehrungServiceImpl" 
+    project="TicketlineRCP" file="/TicketlineRCP/src/at/ticketline/service/AuffuehrungServiceImpl.java" binary="false">    
+    <position x="1016" y="37" width="361" height="195"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.service.MitarbeiterServiceImpl" 
+    project="TicketlineRCP" file="/TicketlineRCP/src/at/ticketline/service/MitarbeiterServiceImpl.java" binary="false">    
+    <position x="1417" y="37" width="196" height="163"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <enumeration corner="BOTTOM_RIGHT" language="java" name="at.ticketline.service.ValidateError" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/service/ValidateError.java" binary="false">    
+    <position x="41" y="320" width="162" height="67"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </enumeration>  
+  <association>    
+    <source project="TicketlineRCP" name="at.ticketline.service.ValidateException" 
+      file="/TicketlineRCP/src/at/ticketline/service/ValidateException.java" binary="false" navigable="false">      
+      <attribute name="error"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="TicketlineRCP" name="at.ticketline.service.ValidateError" 
+      file="/TicketlineRCP/src/at/ticketline/service/ValidateError.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization>    
+    <source project="TicketlineRCP" name="at.ticketline.service.MitarbeiterServiceImpl" 
+      file="/TicketlineRCP/src/at/ticketline/service/MitarbeiterServiceImpl.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.service.interfaces.MitarbeiterService" 
+      file="/TicketlineRCP/src/at/ticketline/service/interfaces/MitarbeiterService.java" binary="false"/>  
+  </realization>  
+  <realization>    
+    <source project="TicketlineRCP" name="at.ticketline.service.KundeServiceImpl" 
+      file="/TicketlineRCP/src/at/ticketline/service/KundeServiceImpl.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.service.interfaces.KundeService" 
+      file="/TicketlineRCP/src/at/ticketline/service/interfaces/KundeService.java" binary="false"/>  
+  </realization>  
+  <realization>    
+    <source project="TicketlineRCP" name="at.ticketline.service.TransaktionServiceImpl" 
+      file="/TicketlineRCP/src/at/ticketline/service/TransaktionServiceImpl.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.service.interfaces.TransaktionService" 
+      file="/TicketlineRCP/src/at/ticketline/service/interfaces/TransaktionService.java" binary="false"/>  
+  </realization>  
+  <realization>    
+    <source project="TicketlineRCP" name="at.ticketline.service.AuffuehrungServiceImpl" 
+      file="/TicketlineRCP/src/at/ticketline/service/AuffuehrungServiceImpl.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.service.interfaces.AuffuehrungService" 
+      file="/TicketlineRCP/src/at/ticketline/service/interfaces/AuffuehrungService.java" binary="false"/>  
+  </realization>  
+  <classifier-display autosize="true" package="true" initial-value="false" signature="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true"/>    
+    <operations public="true" package="true" protected="true" private="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

@@ -1,0 +1,6 @@
+<dataset>
+	
+	<Veranstaltung bezeichnung="test_veranstaltung_1" kategorie="kategorie_1" dauer="10" inhalt="test_inhalt"></Veranstaltung>
+	<Engagement Gage="2" Funktion="test"></Engagement>
+	<Veranstaltung bezeichnung="test_veranstaltung_2" kategorie="kategorie_2" dauer="3" inhalt="hallo test hallo test"></Veranstaltung>
+	<Engagement Gage="55" Funktion="bla"></Engagement></dataset>

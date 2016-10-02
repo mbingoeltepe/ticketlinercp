@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/166/trunk/TicketlineRCP/db-tools
+END
+insertTestData.sql
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/301/trunk/TicketlineRCP/db-tools/insertTestData.sql
+END
+resetAllData.sh
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/59/trunk/TicketlineRCP/db-tools/resetAllData.sh
+END
+sqltool.rc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/59/trunk/TicketlineRCP/db-tools/sqltool.rc
+END
+resetAllData.sql
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/86/trunk/TicketlineRCP/db-tools/resetAllData.sql
+END
+insertTestData.sh
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/59/trunk/TicketlineRCP/db-tools/insertTestData.sh
+END

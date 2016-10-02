@@ -1,0 +1,46 @@
+10
+
+dir
+246
+https://student.inso.tuwien.ac.at/svn/sepm/gruppen/inso_sepm_ws10_02/trunk/TicketlineRCP/src/at/ticketline/kassa/ui
+https://student.inso.tuwien.ac.at/svn/sepm/gruppen/inso_sepm_ws10_02
+
+
+
+2011-01-10T22:31:05.962934Z
+233
+murat.bingoeltepe
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+78f54e33-cbe1-4a49-accd-c3bee6e79d10
+
+command
+dir
+
+editor
+dir
+
+interfaces
+dir
+
+sitzplan
+dir
+
+view
+dir
+
+wizard
+dir
+

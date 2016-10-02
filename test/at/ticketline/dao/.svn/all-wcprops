@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/234/trunk/TicketlineRCP/test/at/ticketline/dao
+END
+VeranstaltungsortDaoTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/181/trunk/TicketlineRCP/test/at/ticketline/dao/VeranstaltungsortDaoTest.java
+END
+MitarbeiterDaoTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/180/trunk/TicketlineRCP/test/at/ticketline/dao/MitarbeiterDaoTest.java
+END
+KundeDaoTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/180/trunk/TicketlineRCP/test/at/ticketline/dao/KundeDaoTest.java
+END
+KuenstlerDaoTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/231/trunk/TicketlineRCP/test/at/ticketline/dao/KuenstlerDaoTest.java
+END
+TransaktionDaoTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/180/trunk/TicketlineRCP/test/at/ticketline/dao/TransaktionDaoTest.java
+END
+VeranstaltungDaoTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/188/trunk/TicketlineRCP/test/at/ticketline/dao/VeranstaltungDaoTest.java
+END
+ValidationTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/104/trunk/TicketlineRCP/test/at/ticketline/dao/ValidationTest.java
+END
+PlatzDaoTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/270/trunk/TicketlineRCP/test/at/ticketline/dao/PlatzDaoTest.java
+END
+AuffuehrungDaoTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/180/trunk/TicketlineRCP/test/at/ticketline/dao/AuffuehrungDaoTest.java
+END

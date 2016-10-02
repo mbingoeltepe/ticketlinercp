@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/8/trunk/TicketlineRCP/src/at/ticketline/log
+END
+Logger.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/8/trunk/TicketlineRCP/src/at/ticketline/log/Logger.java
+END
+Log4JLogger.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/8/trunk/TicketlineRCP/src/at/ticketline/log/Log4JLogger.java
+END
+LogFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/8/trunk/TicketlineRCP/src/at/ticketline/log/LogFactory.java
+END
+EclipseRcpLogAppender.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/8/trunk/TicketlineRCP/src/at/ticketline/log/EclipseRcpLogAppender.java
+END

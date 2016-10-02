@@ -1,0 +1,10 @@
+<dataset>
+	<Veranstaltung bezeichnung="veranstaltung" kategorie="v_kat" dauer="100"></Veranstaltung><Saal bezeichnung="saal"></Saal><Auffuehrung 
+	datumuhrzeit="2010-10-15 20:00:00"
+	storniert="false"
+	preis="0"
+	hinweis="A_Hinweis"
+	version="1">
+		
+	</Auffuehrung>
+	</dataset>

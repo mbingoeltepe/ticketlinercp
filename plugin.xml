@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application
+            icon="icons/web_48.png">
+         <run
+               class="at.ticketline.kassa.TicketlineApplication">
+         </run>
+      </application>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="at.ticketline.kassa.application"
+            description="Ticketline Kassa"
+            name="TicketlineRCP">
+         <property
+               name="appName"
+               value="TicketlineRCP">
+         </property>
+         <property
+               name="windowImages"
+               value="icons/web_16.png,icons/web_32.png,icons/web_48.png">
+         </property>
+         <property
+				name="preferenceCustomization"
+				value="plugin_customization.ini"/>
+         <property
+               name="aboutImage"
+               value="icons/about_ticketline.png">
+         </property>
+         <property
+               name="aboutText"
+               value="Ticketline Kassa &#x0A;Gruppe: 2 &#x0A;Teamkoordinatoren: Daniel Fischl, Andrea Auer &#x0A;Technischer Architekten: Stefan Vöber, Georg Fuderer &#x0A;Testkoordinatoren: Bernhard Sadransky, Murat Bingoltepe">
+         </property>
+         <property
+               name="startupForegroundColor"
+               value="000000">
+         </property>
+         <property
+               name="startupMessageRect"
+               value="7,252,445,20">
+         </property>
+         <property
+               name="startupProgressRect"
+               value="5,275,445,15">
+         </property>
+      </product>
+   </extension>
+   
+   <!--
+   PERSPECTIVES PERSPECTIVES PERSPECTIVES PERSPECTIVES
+   -->
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="at.ticketline.kassa.KassaPerspective"
+            icon="icons/web_48.png"
+            id="at.ticketline.kassa.perspective"
+            name="RCP Perspective">
+      </perspective>
+   </extension>
+   <!--
+   VIEWS VIEWS VIEWS VIEWS VIEWS VIEWS VIEWS VIEWS
+   -->
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="at.ticketline.category.view.suche"
+            name="Suche">
+      </category>
+      <view
+            allowMultiple="false"
+            category="at.ticketline.category.view.suche"
+            class="at.ticketline.kassa.ui.view.KuenstlerSucheView"
+            id="at.ticketline.view.suche.kuenstler"
+            name="Suche Künstler"
+            restorable="true">
+            <description>Suche nach einem Künstler</description>
+      </view>
+      <view
+            allowMultiple="false"
+            category="at.ticketline.category.view.suche"
+            class="at.ticketline.kassa.ui.view.AuffuehrungSucheView"
+            id="at.ticketline.view.suche.auffuehrung"
+            name="Suche Aufführung"
+            restorable="true">
+      </view>
+      <view
+            allowMultiple="false"
+            category="at.ticketline.category.view.suche"
+            class="at.ticketline.kassa.ui.view.KundeSucheView"
+            id="at.ticketline.view.suche.kunde"
+            name="Suche Kunde"
+            restorable="true">
+            <description>Suche nach eine Kunde</description>
+      </view>
+      <view
+            allowMultiple="false"
+            category="at.ticketline.category.view.system"
+            class="at.ticketline.kassa.ui.view.MitarbeiterLoginView"
+            id="at.ticketline.view.login"
+            name="Mitarbeiter Login"
+            restorable="false">
+      </view>
+      <category
+            id="at.ticketline.category.view.system"
+            name="System">
+      </category>
+      <view
+            class="at.ticketline.kassa.ui.view.TicketVerkaufView"
+            id="at.ticketline.view.verkauf.ticket"
+            name="Ticket verkaufen"
+            restorable="true">
+      </view>
+      <view
+            category="at.ticketline.category.view.suche"
+            class="at.ticketline.kassa.ui.view.TicketSucheView"
+            id="at.ticketline.view.suche.ticket"
+            name="Suche Tickets"
+            restorable="true">
+      </view>
+      <view
+            allowMultiple="false"
+            category="at.ticketline.category.view.suche"
+            class="at.ticketline.kassa.ui.view.VeranstaltungSucheView"
+            id="at.ticketline.view.suche.veranstaltung"
+            name="Suche Veranstaltung"
+            restorable="true">
+      </view>
+      <view
+            allowMultiple="false"
+            category="at.ticketline.category.view.suche"
+            class="at.ticketline.kassa.ui.view.OrtSucheView"
+            id="at.ticketline.view.suche.ort"
+            name="Suche Ort"
+            restorable="true">
+      </view>
+      <view
+            category="at.ticketline.category.view.system"
+            class="at.ticketline.kassa.ui.view.NewsView"
+            id="at.ticketline.view.news"
+            name="News"
+            restorable="true">
+      </view>
+   </extension>
+   
+   <!--
+   EDITORS EDITORS EDITORS EDITORS EDITORS
+   -->
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="at.ticketline.kassa.ui.editor.KuenstlerEditor"
+            default="false"
+            id="at.ticketline.editor.kuenstler"
+            name="Künstler">
+      </editor>
+      <editor
+            class="at.ticketline.kassa.ui.editor.KundeEditor"
+            default="false"
+            id="at.ticketline.editor.kunde"
+            name="Kunde">
+      </editor>
+      <editor
+            class="at.ticketline.kassa.ui.editor.SitzplanEditor"
+            default="false"
+            id="at.ticketline.editor.sitzplan"
+            name="Sitzplan">
+      </editor>
+      <editor
+            class="at.ticketline.kassa.ui.editor.AuffuehrungListeEditor"
+            default="false"
+            id="at.ticketline.editor.auffuehrungliste"
+            name="Aufführungen">
+      </editor>
+      <editor
+            class="at.ticketline.kassa.ui.editor.TicketVerkaufEditor"
+            default="false"
+            id="at.ticketline.editor.ticketVerkauf"
+            name="TicketVerkauf">
+      </editor>
+      <editor
+            class="at.ticketline.kassa.ui.editor.SitzplanAnzeigeEditor"
+            default="false"
+            id="at.ticketline.editor.sitzplanAnzeige"
+            name="Sitzplan Anzeige">
+      </editor>
+      <editor
+            class="at.ticketline.kassa.ui.editor.TopTenEditor"
+            default="false"
+            id="at.ticketline.editor.topten"
+            name="Top Ten">
+      </editor>
+      <editor
+            class="at.ticketline.kassa.ui.editor.ShopEditor"
+            default="false"
+            id="at.ticketline.editor.shop"
+            name="Shop">
+      </editor>
+   </extension>
+   
+   <!--
+   MENU MENU MENU MENU MENU MENU MENU MENU
+   -->
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <menu
+               id="fileMenu"
+               label="Datei"
+               mnemonic="D">
+            <menu
+            	id="newMenu"
+            	label="Neu">
+            	<command
+            		commandId="at.ticketline.command.CreateKuenstler"
+            		label="Künstler"
+            		style="push"
+            		tooltip="Neuen Künstler erstellen">
+            	</command>
+            	<command
+            		commandId="at.ticketline.command.CreateKunde"
+            		label="Kunde"
+            		style="push"
+            		tooltip="Neue Kunde erstellen">
+            	</command>
+			</menu>
+            <command
+            	commandId="org.eclipse.ui.file.save"
+            	label="Speichern">
+            </command>
+            <command
+            	commandId="org.eclipse.ui.file.close"
+            	label="Schließen">
+            </command>            	
+            <separator
+                  name="file_separator_1"
+                  visible="true">
+            </separator>
+            <command
+            	commandId="org.eclipse.ui.file.import"
+            	label="Importieren"
+            	style="push"
+            	tooltip="Daten importieren">
+            </command>            
+            <separator
+                  name="file_separator_2"
+                  visible="true">
+            </separator>            
+            <command
+                  commandId="org.eclipse.ui.file.exit"
+                  label="Beenden"
+                  style="push"
+                  tooltip="Beenden von Ticketline">
+            </command>
+         </menu>
+         <menu
+               id="editMenu"
+               label="Bearbeiten"
+               mnemonic="B">
+         	<command
+         		commandId="org.eclipse.ui.edit.cut"
+         		label="Ausschneiden">
+         	</command>
+         	<command
+         		commandId="org.eclipse.ui.edit.copy"
+         		label="Kopieren">
+         	</command>
+         	<command
+         		commandId="org.eclipse.ui.edit.paste"
+         		label="Einfügen">
+         	</command>
+         	<separator
+                  name="edit_separator_1"
+                  visible="true">
+            </separator>   
+         	<command
+         		commandId="org.eclipse.ui.edit.selectAll"
+         		label="Alles markieren">
+         	</command>         	
+         </menu>
+         <menu
+               id="searchMenu"
+               label="Suchen"
+               mnemonic="S">
+            <command
+                  commandId="at.ticketline.command.SearchKuenstler"
+                  label="Künstler"
+                  style="push"
+                  tooltip="Künstler Suchen">
+            </command>
+            <command
+                  commandId="at.ticketline.command.SearchAuffuehrung"
+                  label="Aufführung"
+                  style="push"
+                  tooltip="Aufführung Suchen">
+            </command>
+            <command
+                  commandId="at.ticketline.command.SearchKunde"
+                  label="Kunde"
+                  style="push"
+                  tooltip="Kunde Suchen">
+            </command>
+            <command
+                  commandId="at.ticketline.command.SearchTickets"
+                  label="Tickets"
+                  style="push"
+                  tooltip="Tickets suchen">
+            </command>
+            <command
+                  commandId="at.ticketline.command.SearchVeranstaltung"
+                  label="Veranstaltung"
+                  style="push"
+                  tooltip="Veranstaltung Suchen">
+            </command>
+            <command
+                  commandId="at.ticketline.command.SearchOrt"
+                  label="Ort"
+                  style="push"
+                  tooltip="Veranstaltungsort Suchen">
+            </command>
+            <separator
+                  name="TicketlineRCP.separator1"
+                  visible="true">
+            </separator>
+            <command
+                  commandId="at.ticketline.kassa.ui.command.topten"
+                  label="Top Ten"
+                  style="push"
+                  tooltip="Top Ten anzeigen">
+            </command>
+         </menu>
+         <menu
+               id="shopMenu"
+               label="Shop">
+            <command
+                  commandId="at.ticketline.command.OpenShop"
+                  label="Öffne Merchandise Shop"
+                  style="push"
+                  tooltip="Shop Editor öffnen">
+            </command>
+         </menu>
+         <menu
+               id="windowMenu"
+               label="Fenster"
+               mnemonic="F">
+         	<command
+         		commandId="org.eclipse.ui.perspectives.showPerspective"
+         		label="Perspektiven"
+         		style="push"
+         		tooltip="Perspektiven anzeigen">
+         	</command>         		
+         	<!--command
+         		commandId="org.eclipse.ui.views.showView"
+         		label="Views"
+         		style="push"
+         		tooltip="Views anzeigen">
+         	</command>-->
+         	
+         </menu>
+         <menu
+               id="helpMenu"
+               label="Hilfe"
+               mnemonic="H">
+         	<!--
+         	<command
+         		commandId="org.eclipse.ui.help.helpContents"
+         		label="Hilfe"
+         		style="push"
+         		tooltip="Hilfe starten">
+         	</command>
+         	<separator
+         		  name="edit_separator_1"
+                  visible="true">
+            </separator>
+            -->
+         	<command
+         		commandId="org.eclipse.ui.help.aboutAction"
+         		label="Über Ticketline RCP"
+         		style="push"
+         		tooltip="Über Ticketline RCP">
+         	</command>
+          <command
+                commandId="org.eclipse.ui.help.helpContents"
+                id="helpContents"
+                label="Hilfe"
+                style="push"
+                tooltip="Hilfetheme für Ticketline RCP">
+          </command>
+          <separator
+                name="TicketlineRCP.separator1"
+                visible="true">
+          </separator>
+          <command
+                commandId="at.ticketline.command.DisplayNews"
+                label="News anzeigen"
+                style="push">
+          </command>
+         </menu>
+      </menuContribution>
+      
+      
+      <menuContribution
+      	locationURI="toolbar:at.ticketline.view.suche.kuenstler">
+      	<command
+			commandId="at.ticketline.command.CreateKuenstler"
+			icon="icons/add.gif"
+			style="push">
+		</command>
+      </menuContribution>
+      <menuContribution
+      	locationURI="toolbar:at.ticketline.view.suche.kuenstler">
+      	<command
+			commandId="at.ticketline.command.DeleteKuenstler"
+			icon="icons/delete.png"
+			style="push">
+		</command>
+      </menuContribution>
+      
+      <menuContribution
+      	locationURI="toolbar:at.ticketline.view.suche.kunde">
+      	<command
+			commandId="at.ticketline.command.CreateKunde"
+			icon="icons/add.gif"
+			style="push">
+		</command>
+      </menuContribution>
+      <menuContribution
+      	locationURI="toolbar:at.ticketline.view.suche.kunde">
+      	<command
+			commandId="at.ticketline.command.DeleteKunde"
+			icon="icons/delete.png"
+			style="push">
+		</command>
+      </menuContribution>
+   </extension>
+
+   <!--
+   COMMANDS COMMANDS COMMANDS COMMANDS COMMANDS COMMANDS
+   -->
+   <extension
+         point="org.eclipse.ui.commands">
+         <command
+         	id="at.ticketline.command.CreateKuenstler"
+         	name="Neuer Künstler">
+         </command>
+         <command
+         	id="at.ticketline.command.EditKuenstler"
+         	name="Künstler bearbeiten">
+         </command>
+         <command
+         	id="at.ticketline.command.DeleteKuenstler"
+         	name="Künstler löschen">
+         </command>
+         <command
+               id="at.ticketline.command.SearchKuenstler"
+               name="Suche Künstler">
+         </command>
+         <command
+               id="at.ticketline.command.SearchAuffuehrung"
+               name="Suche Aufführung">
+         </command>
+         <command
+               id="at.ticketline.command.EditSitzplan"
+               name="Sitzplan bearbeiten">
+         </command>
+         <command
+               id="at.ticketline.command.SellTickets"
+               name="Ticket verkaufen/reservieren">
+         </command>
+         <command
+               id="at.ticketline.command.AuffuehrungListeDirekt"
+               name="Aufführung Liste (direkt)">
+         </command>
+         <command
+               id="at.ticketline.command.EditTicketVerkauf"
+               name="Ticket verkaufen/reservieren (Editor)">
+         </command>
+         <command
+         	id="at.ticketline.command.CreateKunde"
+         	name="Neue Kunde">
+         </command>
+         <command
+         	id="at.ticketline.command.EditKunde"
+         	name="Kunde bearbeiten">
+         </command>
+         <command
+         	id="at.ticketline.command.DeleteKunde"
+         	name="Kunde löschen">
+         </command>
+         <command
+               id="at.ticketline.command.SearchKunde"
+               name="Suche Kunde">
+         </command>
+         <command
+               id="at.ticketline.command.SearchTickets"
+               name="Suche Tickets">
+         </command>
+         <command
+               id="at.ticketline.command.SearchVeranstaltung"
+               name="Suche Veranstaltung">
+         </command>
+         <command
+               id="at.ticketline.command.SearchOrt"
+               name="Suche Ort">
+         </command>
+         <command
+               id="at.ticketline.command.DisplayNews"
+               name="News anzeigen">
+         </command>
+         <command
+               id="at.ticketline.kassa.ui.command.topten"
+               name="Top Ten">
+         </command>
+         <command
+               id="at.ticketline.command.OpenShop"
+               name="Öffne Shop">
+         </command>
+   </extension>
+   
+   <!--
+   HANDLER HANDLER HANDLER HANDLER HANDLER HANDLER HANDLER HANDLER
+   -->
+   <extension point="org.eclipse.ui.handlers">
+    	<handler
+        	commandId="at.ticketline.command.CreateKuenstler"
+        	class="at.ticketline.kassa.ui.command.CreateKuenstlerCommandHandler">
+        </handler>
+        <handler
+        	commandId="at.ticketline.command.EditKuenstler"
+        	class="at.ticketline.kassa.ui.command.EditKuenstlerCommandHandler">
+        </handler>
+    	<handler
+        	commandId="at.ticketline.command.DeleteKuenstler"
+        	class="at.ticketline.kassa.ui.command.DeleteKuenstlerCommandHandler">
+        </handler>
+     <handler
+           class="at.ticketline.kassa.ui.command.SearchKuenstlerCommandHandler"
+           commandId="at.ticketline.command.SearchKuenstler">
+     </handler>
+     <handler
+           class="at.ticketline.kassa.ui.command.SearchAuffuehrungCommandHandler"
+           commandId="at.ticketline.command.SearchAuffuehrung">
+     </handler>
+     <handler
+           class="at.ticketline.kassa.ui.command.EditSitzplanCommandHandler"
+           commandId="at.ticketline.command.EditSitzplan">
+     </handler>
+     <handler
+           class="at.ticketline.kassa.ui.command.SellTicketsCommandHandler"
+           commandId="at.ticketline.command.SellTickets">
+     </handler>
+     <handler
+           class="at.ticketline.kassa.ui.command.AuffuehrungenDirektCommandHandler"
+           commandId="at.ticketline.command.AuffuehrungListeDirekt">
+     </handler>
+     <handler
+           class="at.ticketline.kassa.ui.command.SellTicketsEditorCommandHandler"
+           commandId="at.ticketline.command.EditTicketVerkauf">
+     </handler>
+         <handler
+        	commandId="at.ticketline.command.CreateKunde"
+        	class="at.ticketline.kassa.ui.command.CreateKundeCommandHandler">
+         </handler>
+         <handler
+        	commandId="at.ticketline.command.EditKunde"
+        	class="at.ticketline.kassa.ui.command.EditKundeCommandHandler">
+         </handler>
+         <handler
+               class="at.ticketline.kassa.ui.command.DeleteKundeCommandHandler"
+               commandId="at.ticketline.command.DeleteKunde">
+         </handler>
+         <handler
+               class="at.ticketline.kassa.ui.command.SearchKundeCommandHandler"
+               commandId="at.ticketline.command.SearchKunde">
+         </handler>
+     <handler
+           class="at.ticketline.kassa.ui.command.SearchTicketCommandHandler"
+           commandId="at.ticketline.command.SearchTickets">
+     </handler>
+     <handler
+           class="at.ticketline.kassa.ui.command.SearchVeranstaltungCommandHandler"
+           commandId="at.ticketline.command.SearchVeranstaltung">
+     </handler>
+     <handler
+           class="at.ticketline.kassa.ui.command.SearchOrtCommandHandler"
+           commandId="at.ticketline.command.SearchOrt">
+     </handler>
+     <handler
+           class="at.ticketline.kassa.ui.command.NewsCommandHandler"
+           commandId="at.ticketline.command.DisplayNews">
+     </handler>
+     <handler
+           class="at.ticketline.kassa.ui.command.TopTenCommandHandler"
+           commandId="at.ticketline.kassa.ui.command.topten">
+     </handler>
+     <handler
+           class="at.ticketline.kassa.ui.command.OpenShopCommandHandler"
+           commandId="at.ticketline.command.OpenShop">
+     </handler>
+    </extension>
+   
+   <!--
+   WIZARDS WIZARDS WIZARDS WIZARDS WIZARDS WIZARDS WIZARDS 
+   -->
+   <extension
+   		point="org.eclipse.ui.importWizards">
+   		<category
+   			id="at.ticketline.category.wizard.import.xml"
+   			name="XML-Import">
+   		</category>
+   		<wizard
+   			id="at.ticketline.wizard.import.kuenstler"
+   			name="Künstler"
+   			class="at.ticketline.kassa.ui.wizard.KuenstlerImportWizard"
+   			category="at.ticketline.category.wizard.import.xml">
+   			<description>Importiert Künstler aus einer XML-Datei</description>
+   		</wizard>
+   </extension>
+</plugin>

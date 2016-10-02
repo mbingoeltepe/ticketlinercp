@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+	<person
+	id="1"
+	typ="K"
+	nachname="Sadransky" 
+	vorname="Bernhard"
+	username="sad"
+	passwort="sad"
+	geschlecht="0"
+	gruppe="0"
+	strasse="strasse"
+	plz="2042"
+	ort="gd-city"
+	gesperrt="false"
+	ermaechtigung="false"
+	version="1"
+	/>
+</dataset>

@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/234/trunk/TicketlineRCP/test/at/ticketline/test/dataset
+END
+ArtikelServiceImplIntTest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/293/trunk/TicketlineRCP/test/at/ticketline/test/dataset/ArtikelServiceImplIntTest.xml
+END
+PlatzDaoTest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/251/trunk/TicketlineRCP/test/at/ticketline/test/dataset/PlatzDaoTest.xml
+END
+BestellungServiceImplIntTest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/293/trunk/TicketlineRCP/test/at/ticketline/test/dataset/BestellungServiceImplIntTest.xml
+END
+TransaktionDaoTest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/152/trunk/TicketlineRCP/test/at/ticketline/test/dataset/TransaktionDaoTest.xml
+END
+KundeDaoTest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/173/trunk/TicketlineRCP/test/at/ticketline/test/dataset/KundeDaoTest.xml
+END
+KuenstlerDaoTest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/231/trunk/TicketlineRCP/test/at/ticketline/test/dataset/KuenstlerDaoTest.xml
+END
+MitarbeiterDaoTest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/158/trunk/TicketlineRCP/test/at/ticketline/test/dataset/MitarbeiterDaoTest.xml
+END
+VeranstaltungsortServiceImplIntTest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/214/trunk/TicketlineRCP/test/at/ticketline/test/dataset/VeranstaltungsortServiceImplIntTest.xml
+END
+VeranstaltungServiceImplIntTest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/194/trunk/TicketlineRCP/test/at/ticketline/test/dataset/VeranstaltungServiceImplIntTest.xml
+END
+AuffuehrungDaoTest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/150/trunk/TicketlineRCP/test/at/ticketline/test/dataset/AuffuehrungDaoTest.xml
+END
+AuffuehrungServiceImplIntTest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/164/trunk/TicketlineRCP/test/at/ticketline/test/dataset/AuffuehrungServiceImplIntTest.xml
+END
+VeranstaltungDaoTest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/187/trunk/TicketlineRCP/test/at/ticketline/test/dataset/VeranstaltungDaoTest.xml
+END
+MitarbeiterServiceImplIntTest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/173/trunk/TicketlineRCP/test/at/ticketline/test/dataset/MitarbeiterServiceImplIntTest.xml
+END
+VeranstaltungsortDaoTest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/181/trunk/TicketlineRCP/test/at/ticketline/test/dataset/VeranstaltungsortDaoTest.xml
+END
+KundeServiceImplIntTest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/177/trunk/TicketlineRCP/test/at/ticketline/test/dataset/KundeServiceImplIntTest.xml
+END
+TransaktionServiceImplIntTest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/170/trunk/TicketlineRCP/test/at/ticketline/test/dataset/TransaktionServiceImplIntTest.xml
+END
+TopTenServiceImplIntTest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/292/trunk/TicketlineRCP/test/at/ticketline/test/dataset/TopTenServiceImplIntTest.xml
+END

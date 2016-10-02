@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/262/trunk/TicketlineRCP/src/at/ticketline/service
+END
+KuenstlerServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/166/trunk/TicketlineRCP/src/at/ticketline/service/KuenstlerServiceImpl.java
+END
+KundeServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/273/trunk/TicketlineRCP/src/at/ticketline/service/KundeServiceImpl.java
+END
+RSSNewsService.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/249/trunk/TicketlineRCP/src/at/ticketline/service/RSSNewsService.java
+END
+TransaktionServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/229/trunk/TicketlineRCP/src/at/ticketline/service/TransaktionServiceImpl.java
+END
+VeranstaltungServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/194/trunk/TicketlineRCP/src/at/ticketline/service/VeranstaltungServiceImpl.java
+END
+TopTenServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/251/trunk/TicketlineRCP/src/at/ticketline/service/TopTenServiceImpl.java
+END
+ValidateException.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/46/trunk/TicketlineRCP/src/at/ticketline/service/ValidateException.java
+END
+ArtikelServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/250/trunk/TicketlineRCP/src/at/ticketline/service/ArtikelServiceImpl.java
+END
+BestellungServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/303/trunk/TicketlineRCP/src/at/ticketline/service/BestellungServiceImpl.java
+END
+EngagementServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/166/trunk/TicketlineRCP/src/at/ticketline/service/EngagementServiceImpl.java
+END
+AuffuehrungServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/137/trunk/TicketlineRCP/src/at/ticketline/service/AuffuehrungServiceImpl.java
+END
+OrtServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/205/trunk/TicketlineRCP/src/at/ticketline/service/OrtServiceImpl.java
+END
+ValidateError.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/23/trunk/TicketlineRCP/src/at/ticketline/service/ValidateError.java
+END
+MitarbeiterServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/113/trunk/TicketlineRCP/src/at/ticketline/service/MitarbeiterServiceImpl.java
+END

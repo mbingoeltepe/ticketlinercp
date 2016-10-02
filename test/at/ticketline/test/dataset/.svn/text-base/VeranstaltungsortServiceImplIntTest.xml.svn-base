@@ -1,0 +1,10 @@
+<dataset>
+	<ort bezeichnung="test_halle1" typ="3" strasse="hauptstr1234" plz="1111" ort="test_fakecity"
+		land="test_fakeland" verkaufsstelle="false" kiosk="false">
+	</ort>
+	<ort bezeichnung="test_hall 2" strasse="second street" plz="998877"
+		ort="clifden" land="ireland" typ="0" kiosk="false" verkaufsstelle="true">
+	</ort>
+	<ort bezeichnung="test_halle 3" strasse="teststr" plz="5555"
+		ort="fakecity" land="fakeland" typ="8" kiosk="false" verkaufsstelle="false">
+	</ort></dataset>

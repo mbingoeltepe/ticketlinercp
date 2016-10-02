@@ -1,0 +1,14 @@
+<dataset>
+	<Artikel id="1" kurzbezeichnung="kurzbezeichnung artikel1" 
+	beschreibung="beschreibung artikel1" 
+	preis="1" kategorie="1">
+	</Artikel>
+	<Artikel id="2" kurzbezeichnung="kurzbezeichnung artikel2" 
+	beschreibung="beschreibung artikel2" 
+	preis="2" kategorie="2">
+	</Artikel>
+		<Artikel id="3" kurzbezeichnung="kurzbezeichnung artikel3" 
+	beschreibung="beschreibung artikel3" 
+	preis="3" kategorie="1">
+	</Artikel>
+</dataset>

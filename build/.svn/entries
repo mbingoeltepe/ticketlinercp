@@ -1,0 +1,34 @@
+10
+
+dir
+246
+https://student.inso.tuwien.ac.at/svn/sepm/gruppen/inso_sepm_ws10_02/trunk/TicketlineRCP/build
+https://student.inso.tuwien.ac.at/svn/sepm/gruppen/inso_sepm_ws10_02
+
+
+
+2010-11-15T15:45:23.569774Z
+3
+georg.fuderer
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+78f54e33-cbe1-4a49-accd-c3bee6e79d10
+
+classes
+dir
+
+test
+dir
+

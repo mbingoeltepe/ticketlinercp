@@ -1,0 +1,233 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Iconshock License Agreement</title>
+<style type="text/css">
+body {
+	FONT-SIZE: 11px;
+	COLOR: #000000;
+	FONT-FAMILY: verdana, tahoma, arial, sans-serif;
+	/*background-image: url(bg.gif);*/
+	/*background-image: url(bg.gif);*/
+};
+
+tr {
+	FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: verdana, tahoma, arial, sans-serif
+};
+td {
+FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: verdana, tahoma, arial, sans-serif
+};
+
+
+a:link {
+	COLOR: #0000CC;
+}
+a:visited {
+	COLOR: #0000CC;
+}
+a:active {
+	COLOR: #0000CC;
+}
+a:hover {
+	COLOR: #000000;
+}
+
+a.title:link {
+	COLOR: #000000;
+}
+a.title:visited {
+	COLOR: #000000;
+}
+
+a.title:active {
+	COLOR: #000000;
+}
+
+a.title:hover {
+	COLOR: #1877ef;
+}
+.miniInfo {
+	font-size: 9px;
+	color: #999999;
+}
+.btn {
+	BORDER-RIGHT: 1px outset; PADDING-RIGHT: 1px; BORDER-TOP: 1px outset; PADDING-LEFT: 1px; FONT-WEIGHT: normal; FONT-SIZE: 9px; BACKGROUND-IMAGE: url(../fondo_boton.gif); PADDING-BOTTOM: 1px; MARGIN: 0px 0px 0px 1px; BORDER-LEFT: 1px outset; WIDTH: 50px; CURSOR: pointer; PADDING-TOP: 1px; BORDER-BOTTOM: 1px outset; backgroung-image: repeat-x
+}
+.perfilGrisVar{
+	border: 1px solid #CCCCCC;
+	margin: 0px;
+	padding: 5px;
+	background-color: #D9F2FB;
+}
+.SubTittleAdornoTitle {
+font-weight: bold;
+	background-color: #9DCEEC;
+	padding: 5px;
+	border: 1px solid #FCFEFC;
+}
+.testimonial {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #0066CC;
+	background-position: center;
+	padding: 0px 11px;
+}
+.bigText {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #0066CC;
+	background-position: center;
+}
+.buyNowOption {
+	margin: 0px;
+	font-weight: bold;
+	font-size: 11px;
+	height: 20px;
+	width: 102px;
+	padding-top: 5px;
+}
+.buyNowOption a:link {
+	COLOR: #000000;
+}
+.buyNowOption a:visited {
+	COLOR: #000000;
+}
+.buyNowOption a:active {
+	COLOR: #000000;
+}
+.buyNowOption a:hover {
+	COLOR: #0066CC;
+}
+.title {
+	font-weight: bold;
+	color: #000000;
+}
+.espacioTotal {
+	padding-left: 7px;
+    padding-right: 8px;
+}
+.espacioTotalBorderLeft {
+	padding-left: 7px;
+	padding-right: 8px;
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: #0099CC;
+}
+
+.leftPad {
+	margin-left: 8px;
+}
+.extBorder {
+	padding: 4px;
+	border-top: 1px solid #CCCCCC;
+	border-right: 1px #CCCCCC;
+	border-bottom: 1px #CCCCCC;
+	border-left: 1px #CCCCCC;
+}
+.info {
+	font-size: 11px;
+	color: #999999;
+}
+.importantText {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #FF0000;
+	background-position: center;
+}
+.menu {
+	color: #FFFFFF;
+	font-size: 11px;
+	background-color: #00CCFF;
+	padding: 4px 4px 5px;
+	border: 1px dotted #FFFFFF;
+	text-align: center;
+}
+
+.menu a:link, .menu a:visited, .menu a:active
+{
+	color: #000000;
+	font-weight: bold;
+	font-style: normal;
+	font-size: 10px;
+	line-height: normal;
+	font-variant: normal;
+	text-transform: none;
+	text-decoration: underline;
+}
+.menu a:hover
+{
+color: #FFFFFF;
+}
+.subMenu {
+	padding-left: 7px;
+	margin-left: 3px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	border: 1px solid #CCCCCC;
+}
+.espacioTotalHeader {
+	margin-right: 10px;
+	margin-left: 7px;
+	padding: 3px;
+	background-color: #F5F5F5;
+	border-top: 1px solid #00CCCC;
+	border-right: 1px solid #00CCCC;
+	border-bottom: 2px solid #00CCCC;
+	border-left: 1px solid #00CCCC;
+}
+input {
+	font-size: 10px;
+}
+.bgTable {
+
+	border: 1px solid #CCCCCC;
+	margin: 0px;
+	padding: 5px;
+	background-color: #D9F2FB;
+}
+form {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.bgForm {
+
+
+	border: 1px solid #CCCCCC;
+	margin: 0px;
+	padding: 0px;
+	background-color: #D9F2FB;
+}
+</style>
+</head>
+
+<body>
+<table width="400" height="360" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="47" class="title"><div align="center"><img src="logo/logoIconMini.gif" width="316" height="39" /><br />
+            <br />
+    </div></td>
+  </tr>
+  <tr>
+    <td height="24" class="title"><div align="center">License Agreement<br />
+            <br />
+    </div></td>
+  </tr>
+  <tr>
+    <td height="260"><span class="bigText">This is a legal agreement between you,the purchaser, and Iconshock. By purchasing or downloading any royalty-free icons from our website, you agree to the following:<br />
+          <br />
+      All of the icons remain the property of Iconshock. The icons can be used royalty-free by the license for any personal or commercial projects.<br />
+      <br />
+      The license does not permit the following uses: The icon may not be publicensed, resold, rent, transfer, or otherwise made available for use or detached from a product, software application, or web page. The Icons may not be placed on any electronic bulletin board, downloadable format. You may not in include the icons in any web template, including those which are web based, but not limited to website designs and presentation templates. <br />
+      <br />
+      All icon files are provided &quot;As is.&quot; Modifications to the image data are limited to combinations of the included icons and to hue, saturation, brightness adjustments. You agree not to hold Iconshock liable for any damages that may occur during to use, or inability to use,icons or image date from Iconshock.<br />
+    </span></td>
+  </tr>
+</table>
+</body>
+</html>

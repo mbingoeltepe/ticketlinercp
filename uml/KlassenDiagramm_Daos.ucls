@@ -1,0 +1,514 @@
+<class-diagram version="0.9.86" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true">  
+  <interface corner="BOTTOM_RIGHT" language="java" name="at.ticketline.dao.GenericDao" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/dao/GenericDao.java" binary="false">    
+    <position x="1536" y="400" width="124" height="211"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.dao.DaoFactory" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/dao/DaoFactory.java" binary="false">    
+    <position x="610" y="37" width="319" height="163"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.dao.GenericDaoJpa" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/dao/GenericDaoJpa.java" binary="false">    
+    <position x="1536" y="37" width="165" height="323"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <interface corner="BOTTOM_RIGHT" language="java" name="at.ticketline.dao.interfaces.AuffuehrungDao" 
+    project="TicketlineRCP" file="/TicketlineRCP/src/at/ticketline/dao/interfaces/AuffuehrungDao.java" binary="false">    
+    <position x="417" y="651" width="283" height="67"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <interface corner="BOTTOM_RIGHT" language="java" name="at.ticketline.dao.interfaces.ArtikelDao" 
+    project="TicketlineRCP" file="/TicketlineRCP/src/at/ticketline/dao/interfaces/ArtikelDao.java" binary="false">    
+    <position x="1296" y="651" width="118" height="51"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <interface corner="BOTTOM_RIGHT" language="java" name="at.ticketline.dao.interfaces.BestellungDao" 
+    project="TicketlineRCP" file="/TicketlineRCP/src/at/ticketline/dao/interfaces/BestellungDao.java" binary="false">    
+    <position x="1138" y="651" width="118" height="51"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <interface corner="BOTTOM_RIGHT" language="java" name="at.ticketline.dao.interfaces.EngagementDao" 
+    project="TicketlineRCP" file="/TicketlineRCP/src/at/ticketline/dao/interfaces/EngagementDao.java" binary="false">    
+    <position x="980" y="651" width="118" height="51"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <interface corner="BOTTOM_RIGHT" language="java" name="at.ticketline.dao.interfaces.KategorieDao" 
+    project="TicketlineRCP" file="/TicketlineRCP/src/at/ticketline/dao/interfaces/KategorieDao.java" binary="false">    
+    <position x="2045" y="651" width="118" height="51"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <interface corner="BOTTOM_RIGHT" language="java" name="at.ticketline.dao.interfaces.KuenstlerDao" 
+    project="TicketlineRCP" file="/TicketlineRCP/src/at/ticketline/dao/interfaces/KuenstlerDao.java" binary="false">    
+    <position x="1770" y="651" width="235" height="67"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <interface corner="BOTTOM_RIGHT" language="java" name="at.ticketline.dao.interfaces.KundeDao" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/dao/interfaces/KundeDao.java" binary="false">    
+    <position x="740" y="651" width="200" height="99"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.dao.jpa.ArtikelDaoJpa" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/dao/jpa/ArtikelDaoJpa.java" binary="false">    
+    <position x="1255" y="400" width="103" height="51"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.dao.jpa.AuffuehrungDaoJpa" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/dao/jpa/AuffuehrungDaoJpa.java" binary="false">    
+    <position x="349" y="400" width="283" height="67"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.dao.jpa.BestellungDaoJpa" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/dao/jpa/BestellungDaoJpa.java" binary="false">    
+    <position x="1089" y="400" width="126" height="51"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.dao.jpa.EngagementDaoJpa" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/dao/jpa/EngagementDaoJpa.java" binary="false">    
+    <position x="912" y="400" width="137" height="51"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.dao.jpa.KategorieDaoJpa" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/dao/jpa/KategorieDaoJpa.java" binary="false">    
+    <position x="2103" y="400" width="121" height="51"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.dao.jpa.KuenstlerDaoJpa" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/dao/jpa/KuenstlerDaoJpa.java" binary="false">    
+    <position x="1828" y="400" width="235" height="67"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.dao.jpa.KundeDaoJpa" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/dao/jpa/KundeDaoJpa.java" binary="false">    
+    <position x="672" y="400" width="200" height="99"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <interface corner="BOTTOM_RIGHT" language="java" name="at.ticketline.dao.interfaces.MitarbeiterDao" 
+    project="TicketlineRCP" file="/TicketlineRCP/src/at/ticketline/dao/interfaces/MitarbeiterDao.java" binary="false">    
+    <position x="2519" y="651" width="196" height="99"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <interface corner="BOTTOM_RIGHT" language="java" name="at.ticketline.dao.interfaces.ReiheDao" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/dao/interfaces/ReiheDao.java" binary="false">    
+    <position x="2361" y="651" width="118" height="51"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <interface corner="BOTTOM_RIGHT" language="java" name="at.ticketline.dao.interfaces.TransaktionDao" 
+    project="TicketlineRCP" file="/TicketlineRCP/src/at/ticketline/dao/interfaces/TransaktionDao.java" binary="false">    
+    <position x="112" y="651" width="265" height="83"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <interface corner="BOTTOM_RIGHT" language="java" name="at.ticketline.dao.interfaces.OrtDao" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/dao/interfaces/OrtDao.java" binary="false">    
+    <position x="1612" y="651" width="118" height="51"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <interface corner="BOTTOM_RIGHT" language="java" name="at.ticketline.dao.interfaces.VeranstaltungDao" 
+    project="TicketlineRCP" file="/TicketlineRCP/src/at/ticketline/dao/interfaces/VeranstaltungDao.java" binary="false">    
+    <position x="2755" y="651" width="124" height="51"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <interface corner="BOTTOM_RIGHT" language="java" name="at.ticketline.dao.interfaces.SaalDao" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/dao/interfaces/SaalDao.java" binary="false">    
+    <position x="2203" y="651" width="118" height="51"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <interface corner="BOTTOM_RIGHT" language="java" name="at.ticketline.dao.interfaces.NewsDao" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/dao/interfaces/NewsDao.java" binary="false">    
+    <position x="1454" y="651" width="118" height="51"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.dao.jpa.SaalDaoJpa" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/dao/jpa/SaalDaoJpa.java" binary="false">    
+    <position x="2264" y="400" width="91" height="51"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.dao.jpa.OrtDaoJpa" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/dao/jpa/OrtDaoJpa.java" binary="false">    
+    <position x="1700" y="400" width="88" height="51"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.dao.jpa.TransaktionDaoJpa" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/dao/jpa/TransaktionDaoJpa.java" binary="false">    
+    <position x="44" y="400" width="265" height="83"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.dao.jpa.VeranstaltungDaoJpa" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/dao/jpa/VeranstaltungDaoJpa.java" binary="false">    
+    <position x="2769" y="400" width="145" height="51"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.dao.jpa.NewsDaoJpa" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/dao/jpa/NewsDaoJpa.java" binary="false">    
+    <position x="1398" y="400" width="98" height="51"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.dao.jpa.ReiheDaoJpa" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/dao/jpa/ReiheDaoJpa.java" binary="false">    
+    <position x="2395" y="400" width="98" height="51"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="at.ticketline.dao.jpa.MitarbeiterDaoJpa" project="TicketlineRCP" 
+    file="/TicketlineRCP/src/at/ticketline/dao/jpa/MitarbeiterDaoJpa.java" binary="false">    
+    <position x="2533" y="400" width="196" height="115"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <realization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.jpa.ReiheDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/jpa/ReiheDaoJpa.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.interfaces.ReiheDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/interfaces/ReiheDao.java" binary="false"/>  
+  </realization>  
+  <generalization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.interfaces.NewsDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/interfaces/NewsDao.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.GenericDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/GenericDao.java" binary="false"/>  
+  </generalization>  
+  <generalization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.interfaces.ReiheDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/interfaces/ReiheDao.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.GenericDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/GenericDao.java" binary="false"/>  
+  </generalization>  
+  <realization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.jpa.VeranstaltungDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/jpa/VeranstaltungDaoJpa.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.interfaces.VeranstaltungDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/interfaces/VeranstaltungDao.java" binary="false"/>  
+  </realization>  
+  <generalization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.interfaces.AuffuehrungDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/interfaces/AuffuehrungDao.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.GenericDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/GenericDao.java" binary="false"/>  
+  </generalization>  
+  <realization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.jpa.ArtikelDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/jpa/ArtikelDaoJpa.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.interfaces.ArtikelDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/interfaces/ArtikelDao.java" binary="false"/>  
+  </realization>  
+  <generalization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.interfaces.BestellungDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/interfaces/BestellungDao.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.GenericDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/GenericDao.java" binary="false"/>  
+  </generalization>  
+  <generalization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.interfaces.VeranstaltungDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/interfaces/VeranstaltungDao.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.GenericDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/GenericDao.java" binary="false"/>  
+  </generalization>  
+  <generalization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.jpa.KuenstlerDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/jpa/KuenstlerDaoJpa.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.GenericDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/GenericDaoJpa.java" binary="false"/>  
+  </generalization>  
+  <generalization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.interfaces.ArtikelDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/interfaces/ArtikelDao.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.GenericDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/GenericDao.java" binary="false"/>  
+  </generalization>  
+  <generalization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.jpa.KategorieDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/jpa/KategorieDaoJpa.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.GenericDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/GenericDaoJpa.java" binary="false"/>  
+  </generalization>  
+  <generalization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.interfaces.EngagementDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/interfaces/EngagementDao.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.GenericDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/GenericDao.java" binary="false"/>  
+  </generalization>  
+  <generalization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.interfaces.TransaktionDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/interfaces/TransaktionDao.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.GenericDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/GenericDao.java" binary="false"/>  
+  </generalization>  
+  <realization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.jpa.KundeDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/jpa/KundeDaoJpa.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.interfaces.KundeDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/interfaces/KundeDao.java" binary="false"/>  
+  </realization>  
+  <generalization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.jpa.AuffuehrungDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/jpa/AuffuehrungDaoJpa.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.GenericDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/GenericDaoJpa.java" binary="false"/>  
+  </generalization>  
+  <generalization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.jpa.OrtDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/jpa/OrtDaoJpa.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.GenericDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/GenericDaoJpa.java" binary="false"/>  
+  </generalization>  
+  <generalization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.jpa.ArtikelDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/jpa/ArtikelDaoJpa.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.GenericDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/GenericDaoJpa.java" binary="false"/>  
+  </generalization>  
+  <generalization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.jpa.MitarbeiterDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/jpa/MitarbeiterDaoJpa.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.GenericDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/GenericDaoJpa.java" binary="false"/>  
+  </generalization>  
+  <generalization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.jpa.BestellungDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/jpa/BestellungDaoJpa.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.GenericDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/GenericDaoJpa.java" binary="false"/>  
+  </generalization>  
+  <realization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.jpa.KategorieDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/jpa/KategorieDaoJpa.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.interfaces.KategorieDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/interfaces/KategorieDao.java" binary="false"/>  
+  </realization>  
+  <generalization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.interfaces.MitarbeiterDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/interfaces/MitarbeiterDao.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.GenericDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/GenericDao.java" binary="false"/>  
+  </generalization>  
+  <realization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.jpa.BestellungDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/jpa/BestellungDaoJpa.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.interfaces.BestellungDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/interfaces/BestellungDao.java" binary="false"/>  
+  </realization>  
+  <generalization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.jpa.EngagementDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/jpa/EngagementDaoJpa.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.GenericDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/GenericDaoJpa.java" binary="false"/>  
+  </generalization>  
+  <generalization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.interfaces.KuenstlerDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/interfaces/KuenstlerDao.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.GenericDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/GenericDao.java" binary="false"/>  
+  </generalization>  
+  <generalization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.interfaces.SaalDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/interfaces/SaalDao.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.GenericDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/GenericDao.java" binary="false"/>  
+  </generalization>  
+  <generalization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.interfaces.KategorieDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/interfaces/KategorieDao.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.GenericDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/GenericDao.java" binary="false"/>  
+  </generalization>  
+  <realization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.jpa.OrtDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/jpa/OrtDaoJpa.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.interfaces.OrtDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/interfaces/OrtDao.java" binary="false"/>  
+  </realization>  
+  <realization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.jpa.EngagementDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/jpa/EngagementDaoJpa.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.interfaces.EngagementDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/interfaces/EngagementDao.java" binary="false"/>  
+  </realization>  
+  <realization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.jpa.MitarbeiterDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/jpa/MitarbeiterDaoJpa.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.interfaces.MitarbeiterDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/interfaces/MitarbeiterDao.java" binary="false"/>  
+  </realization>  
+  <generalization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.jpa.KundeDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/jpa/KundeDaoJpa.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.GenericDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/GenericDaoJpa.java" binary="false"/>  
+  </generalization>  
+  <generalization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.jpa.VeranstaltungDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/jpa/VeranstaltungDaoJpa.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.GenericDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/GenericDaoJpa.java" binary="false"/>  
+  </generalization>  
+  <generalization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.jpa.ReiheDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/jpa/ReiheDaoJpa.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.GenericDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/GenericDaoJpa.java" binary="false"/>  
+  </generalization>  
+  <realization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.jpa.AuffuehrungDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/jpa/AuffuehrungDaoJpa.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.interfaces.AuffuehrungDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/interfaces/AuffuehrungDao.java" binary="false"/>  
+  </realization>  
+  <realization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.jpa.KuenstlerDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/jpa/KuenstlerDaoJpa.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.interfaces.KuenstlerDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/interfaces/KuenstlerDao.java" binary="false"/>  
+  </realization>  
+  <generalization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.jpa.NewsDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/jpa/NewsDaoJpa.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.GenericDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/GenericDaoJpa.java" binary="false"/>  
+  </generalization>  
+  <realization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.jpa.NewsDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/jpa/NewsDaoJpa.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.interfaces.NewsDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/interfaces/NewsDao.java" binary="false"/>  
+  </realization>  
+  <generalization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.interfaces.OrtDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/interfaces/OrtDao.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.GenericDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/GenericDao.java" binary="false"/>  
+  </generalization>  
+  <generalization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.interfaces.KundeDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/interfaces/KundeDao.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.GenericDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/GenericDao.java" binary="false"/>  
+  </generalization>  
+  <realization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.jpa.SaalDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/jpa/SaalDaoJpa.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.interfaces.SaalDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/interfaces/SaalDao.java" binary="false"/>  
+  </realization>  
+  <generalization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.jpa.SaalDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/jpa/SaalDaoJpa.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.GenericDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/GenericDaoJpa.java" binary="false"/>  
+  </generalization>  
+  <realization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.GenericDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/GenericDaoJpa.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.GenericDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/GenericDao.java" binary="false"/>  
+  </realization>  
+  <generalization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.jpa.TransaktionDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/jpa/TransaktionDaoJpa.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.GenericDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/GenericDaoJpa.java" binary="false"/>  
+  </generalization>  
+  <realization>    
+    <source project="TicketlineRCP" name="at.ticketline.dao.jpa.TransaktionDaoJpa" 
+      file="/TicketlineRCP/src/at/ticketline/dao/jpa/TransaktionDaoJpa.java" binary="false"/>    
+    <target project="TicketlineRCP" name="at.ticketline.dao.interfaces.TransaktionDao" 
+      file="/TicketlineRCP/src/at/ticketline/dao/interfaces/TransaktionDao.java" binary="false"/>  
+  </realization>  
+  <classifier-display autosize="true" package="true" initial-value="false" signature="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true"/>    
+    <operations public="true" package="true" protected="true" private="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

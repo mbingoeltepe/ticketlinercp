@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/262/trunk/TicketlineRCP/src/at/ticketline/service/interfaces
+END
+KundeService.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/273/trunk/TicketlineRCP/src/at/ticketline/service/interfaces/KundeService.java
+END
+KuenstlerService.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/166/trunk/TicketlineRCP/src/at/ticketline/service/interfaces/KuenstlerService.java
+END
+TransaktionService.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/282/trunk/TicketlineRCP/src/at/ticketline/service/interfaces/TransaktionService.java
+END
+VeranstaltungService.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/194/trunk/TicketlineRCP/src/at/ticketline/service/interfaces/VeranstaltungService.java
+END
+TopTenService.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/251/trunk/TicketlineRCP/src/at/ticketline/service/interfaces/TopTenService.java
+END
+ArtikelService.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/250/trunk/TicketlineRCP/src/at/ticketline/service/interfaces/ArtikelService.java
+END
+BestellungService.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/303/trunk/TicketlineRCP/src/at/ticketline/service/interfaces/BestellungService.java
+END
+EngagementService.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/166/trunk/TicketlineRCP/src/at/ticketline/service/interfaces/EngagementService.java
+END
+AuffuehrungService.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/52/trunk/TicketlineRCP/src/at/ticketline/service/interfaces/AuffuehrungService.java
+END
+OrtService.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/181/trunk/TicketlineRCP/src/at/ticketline/service/interfaces/OrtService.java
+END
+NewsService.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/249/trunk/TicketlineRCP/src/at/ticketline/service/interfaces/NewsService.java
+END
+MitarbeiterService.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/47/trunk/TicketlineRCP/src/at/ticketline/service/interfaces/MitarbeiterService.java
+END

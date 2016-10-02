@@ -1,0 +1,8 @@
+<dataset>
+	<Bestellung id="1" bezahlt="true" versandt="true" zahlungsart="0" bestellzeitpunkt="2010-10-10 17:00:00">
+	</Bestellung>
+	<Bestellung id="2" bezahlt="false" versandt="true" zahlungsart="4" bestellzeitpunkt="2010-10-18 13:00:00">
+	</Bestellung>
+	<Bestellung id="3" bezahlt="true" versandt="true" zahlungsart="3" bestellzeitpunkt="2010-10-20 19:00:00">
+	</Bestellung>
+</dataset>

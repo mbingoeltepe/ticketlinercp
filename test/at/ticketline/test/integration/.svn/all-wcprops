@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/216/trunk/TicketlineRCP/test/at/ticketline/test/integration
+END
+VeranstaltungsortServiceImplIntTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/214/trunk/TicketlineRCP/test/at/ticketline/test/integration/VeranstaltungsortServiceImplIntTest.java
+END
+MitarbeiterServiceImplIntTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/180/trunk/TicketlineRCP/test/at/ticketline/test/integration/MitarbeiterServiceImplIntTest.java
+END
+AuffuehrungServiceImplIntTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/180/trunk/TicketlineRCP/test/at/ticketline/test/integration/AuffuehrungServiceImplIntTest.java
+END
+BestellungServiceImplIntTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/314/trunk/TicketlineRCP/test/at/ticketline/test/integration/BestellungServiceImplIntTest.java
+END
+ArtikelServiceImplIntTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/293/trunk/TicketlineRCP/test/at/ticketline/test/integration/ArtikelServiceImplIntTest.java
+END
+TopTenServiceImplIntTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/292/trunk/TicketlineRCP/test/at/ticketline/test/integration/TopTenServiceImplIntTest.java
+END
+TransaktionServiceImplIntTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/180/trunk/TicketlineRCP/test/at/ticketline/test/integration/TransaktionServiceImplIntTest.java
+END
+VeranstaltungServiceImplIntTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/195/trunk/TicketlineRCP/test/at/ticketline/test/integration/VeranstaltungServiceImplIntTest.java
+END
+KundeServiceImplIntTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/273/trunk/TicketlineRCP/test/at/ticketline/test/integration/KundeServiceImplIntTest.java
+END

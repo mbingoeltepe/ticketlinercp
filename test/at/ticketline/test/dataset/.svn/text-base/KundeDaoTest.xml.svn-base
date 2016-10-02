@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+	<!--Metadaten der Tabelle werden aus der jeweiligen ersten Zeile
+	 der Tabelle entnommen, d.h. wenn man mehrere Zeilen hat, immer
+	 alle Attribute, die man verwenden moechte in der ersten Zeile
+	 angeben. Die weggelassenen Attribute werden in den nachfolgenden
+	 Zeilen dann mit null-Werten aufgefuellt.
+	 
+	 Leere Tabellen sind auch moeglich z.B. <tabelle/>, diese kann
+	 man fuer bestimmte Operationen brauchen (CLEAN_INSERT, DELETE_ALL),	     wenn diese z.B. auch geloescht werden sollen.-->
+	<person
+	id="1"
+	typ="K"
+	nachname="Sadransky" 
+	vorname="Bernhard"
+	username="sad"
+	passwort="sad"
+	geschlecht="0"
+	gruppe="0"
+	strasse="strasse"
+	plz="2042"
+	ort="gd-city"
+	gesperrt="false"
+	ermaechtigung="false"
+	version="1"
+	/>
+</dataset>

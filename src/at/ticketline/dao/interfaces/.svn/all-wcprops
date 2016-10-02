@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/303/trunk/TicketlineRCP/src/at/ticketline/dao/interfaces
+END
+MitarbeiterDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/32/trunk/TicketlineRCP/src/at/ticketline/dao/interfaces/MitarbeiterDao.java
+END
+KuenstlerDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/8/trunk/TicketlineRCP/src/at/ticketline/dao/interfaces/KuenstlerDao.java
+END
+KundeDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/111/trunk/TicketlineRCP/src/at/ticketline/dao/interfaces/KundeDao.java
+END
+TransaktionDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/282/trunk/TicketlineRCP/src/at/ticketline/dao/interfaces/TransaktionDao.java
+END
+BestellPositionDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/303/trunk/TicketlineRCP/src/at/ticketline/dao/interfaces/BestellPositionDao.java
+END
+PlatzDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/251/trunk/TicketlineRCP/src/at/ticketline/dao/interfaces/PlatzDao.java
+END
+ArtikelDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/250/trunk/TicketlineRCP/src/at/ticketline/dao/interfaces/ArtikelDao.java
+END
+BestellungDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/262/trunk/TicketlineRCP/src/at/ticketline/dao/interfaces/BestellungDao.java
+END
+OrtDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/181/trunk/TicketlineRCP/src/at/ticketline/dao/interfaces/OrtDao.java
+END
+NewsDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/8/trunk/TicketlineRCP/src/at/ticketline/dao/interfaces/NewsDao.java
+END
+ReiheDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/8/trunk/TicketlineRCP/src/at/ticketline/dao/interfaces/ReiheDao.java
+END
+VeranstaltungDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/251/trunk/TicketlineRCP/src/at/ticketline/dao/interfaces/VeranstaltungDao.java
+END
+SaalDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/8/trunk/TicketlineRCP/src/at/ticketline/dao/interfaces/SaalDao.java
+END
+EngagementDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/166/trunk/TicketlineRCP/src/at/ticketline/dao/interfaces/EngagementDao.java
+END
+KategorieDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/8/trunk/TicketlineRCP/src/at/ticketline/dao/interfaces/KategorieDao.java
+END
+AuffuehrungDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/sepm/gruppen/inso_sepm_ws10_02/!svn/ver/205/trunk/TicketlineRCP/src/at/ticketline/dao/interfaces/AuffuehrungDao.java
+END
